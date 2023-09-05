@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../ShoppingProjectSetup_Week1Day2/http___yaffa-cdn.s3.amazonaws.com_yaffadsp_images_dmImage_SourceImage_Wishing-Well1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(10, 9, 9);
+    text-transform: uppercase;
+}
+
+img {
+    height: 150px;
+    width: 136px;
+}
+
+.item-card p {
+    text-align: center;
+    margin: 5px;
+}
+
+.item-card button {
+    margin: auto;
+    display: block;
+    border: 0;
+}
+
+.item-card {
+    width: 136px;
+    margin: 10px;
+    background-color: #dae1da;
+    position: relative;
+    box-shadow: 5px 5px;
+    box-shadow: 1px 1px grey;
+    display: inline-block;
+}
+
+.item-card div {
+    position: absolute;
+    top: 5px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.new-product {
+    left: 5px;
+    background-color: green;
+    color: white;
+}
+
+.discount {
+    right: 5px;
+    background-color: red;
+    color: white;
+}
+
+.price {
+    color: green;
+}
+
+@media (max-width:600px) {
+    .item-card {
+        display: block;
+        margin: auto;
+        margin-top: 8px;
+        width: 250px;
+    }
+    img {
+        width: 100%;
+    }
+}
