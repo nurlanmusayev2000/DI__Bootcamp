@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image: url("pngtree-3d-world-map-with-shadow-light-image_329158.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.heading {
+    text-align: center;
+}
+
+.reklams {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+.reklam-card h2 {
+    color: blue;
+}
+
+.reklam-card {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.review-cards {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    text-align: center;
+    padding: 15px;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card-item-1 {
+    position: relative;
+}
+
+.review {
+    padding: 15px;
+}
+
+.form {
+    background-color: white;
+    padding: 10px;
+}
+
+.about {
+    background-color: rgb(41, 30, 147);
+    color: wheat;
+    font-size: .8em;
+    padding: 3px;
+}
