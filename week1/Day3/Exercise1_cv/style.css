@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    border: 2px dashed red;
+    height: 80%;
+    width: 55%;
+    margin: 5px auto;
+    background-color: rgb(219, 216, 216);
+}
+
+.container img {
+    margin: 8px;
+    border-radius: 5px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    box-shadow: 1px 1px 1px 1px gray;
+}
+
+.nameInfo {
+    margin: 5px;
+}
+
+.nameInfo h1:first-child {
+    font-weight: normal;
+}
+
+.nameInfo p {
+    margin-top: 3px;
+}
+
+section {
+    /* box-shadow: 1px 1px 1px 1px grey; */
+    margin: 5px;
+    display: grid;
+    grid-template-columns: 1.5fr 3fr;
+    grid-template-rows: .5fr .5fr;
+    gap: 2px;
+}
+
+section>div {
+    margin: 7px;
+}
+
+section div p {
+    font-size: 10px;
+}
+
+section div i {
+    padding: 3px;
+    color: #4f4f21;
+}
+
+.skills ul {
+    margin-left: 25px;
+}
+
+hr {
+    padding: 0.5px;
+    background: red;
+}
+
+.skillsList {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+section>div {
+    width: 90%;
+}
+
+@media (max-width:810px) {
+    section {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width:625px) {
+    header {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+    }
+    .container {
+        text-align: center;
+    }
+    .skillsList {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: start;
+    }
+}
