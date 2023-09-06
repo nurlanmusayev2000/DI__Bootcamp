@@ -44,17 +44,24 @@ body {
 }
 
 .review {
-    padding: 15px;
+    padding: 20px;
 }
 
 .form {
     background-color: white;
-    padding: 10px;
 }
 
 .about {
     background-color: rgb(41, 30, 147);
     color: wheat;
     font-size: .8em;
-    padding: 3px;
+    padding: 15px;
+    grid-row: end;
+}
+
+.card-item-1 img {
+    border-radius: 50%;
+    position: absolute;
+    top: 60%;
+    left: 40%;
 }
