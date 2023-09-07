@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.image {
+    background-image: url("https://cdn.pixabay.com/photo/2016/03/26/13/09/cup-of-coffee-1280537_1280.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.upside {
+    height: 500px;
+}
+
+section {
+    height: 50vh;
+}
+
+.downside {
+    margin: 30px;
+}
