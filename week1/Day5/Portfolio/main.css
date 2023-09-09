@@ -24,6 +24,7 @@
         position: fixed;
         top: 0;
         width: 100%;
+        z-index: 1;
     }
     
     nav h3 {
@@ -182,4 +183,27 @@
         top: 50%;
         left: 50%;
         transition: 1s
+    }
+    /* contact */
+    
+    .org i {
+        margin: 5px;
+        font-size: 1.5rem;
+    }
+    
+    .parts {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .social-media {
+        flex: 2;
+    }
+    
+    .contact-email {
+        flex: 4;
+    }
+    
+    .form input {
+        margin: 3px;
     }
