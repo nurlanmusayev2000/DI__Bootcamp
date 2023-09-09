@@ -129,14 +129,57 @@
     /* team */
     
     .team-content {
-        width: 80%;
+        width: 70%;
+        margin: auto;
     }
     
     .content-item {
-        background-color: orange;
         padding: 0;
     }
     
     .content-photo img {
         width: 100%;
+    }
+    
+    .col-3 {
+        width: 23%;
+    }
+    
+    .content-item h6 {
+        background-color: orangered;
+        color: white;
+        border-bottom-left-radius: 93%;
+        padding: 2px;
+    }
+    
+    .content-item:hover h6 {
+        display: none;
+    }
+    
+    .content-item:hover {
+        background-color: orange;
+        transition: 1s;
+    }
+    
+    .content-item:hover .content-photo {
+        opacity: 0.5;
+    }
+    
+    .content-photo {
+        position: relative;
+    }
+    
+    .hov-name {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: white;
+        z-index: -1;
+    }
+    
+    .content-item:hover .hov-name {
+        z-index: 0;
+        top: 50%;
+        left: 50%;
+        transition: 1s
     }
