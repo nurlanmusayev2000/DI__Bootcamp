@@ -1,0 +1,142 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    .org {
+        color: orangered;
+        font-family: 'Merriweather', serif;
+    }
+    /* Navigation */
+    
+    .navigation {
+        background-color: orangered;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    
+    nav h3 {
+        font-size: 1.3rem;
+    }
+    
+    nav h3,
+    nav ul {
+        place-self: center;
+    }
+    
+    nav h3 a:hover {
+        color: black;
+    }
+    
+    .navigation ul {
+        display: flex;
+        list-style-type: none;
+    }
+    
+    .navigation li {
+        padding: 0 25px;
+        font-size: 1.3rem;
+    }
+    
+    .navigation li:hover {
+        background-color: white;
+        padding: 1px 25px;
+        border-radius: 5%;
+    }
+    
+    .navigation li:hover a {
+        color: black;
+    }
+    /* Section about part */
+    
+    .home {
+        height: 100vh;
+        background-image: url("https://images.pexels.com/photos/574077/pexels-photo-574077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .content {
+        width: 70%;
+        margin-top: 35px;
+        background-color: rgb(70 33 144 / 35%);
+        padding: 40px;
+        border-radius: 9%;
+    }
+    
+    .content h1 {
+        color: #bae90f;
+    }
+    
+    .content p {
+        color: #ffd6c7;
+        font-size: 1.3rem;
+        padding-top: 5px;
+        font-family: 'Merriweather', serif;
+    }
+    /* About me */
+    
+    .about {
+        height: 90vh;
+        background-color: antiquewhite;
+    }
+    
+    .about-content {
+        width: 80%;
+    }
+    
+    aside img {
+        height: 300px;
+        width: 300px;
+    }
+    
+    .border-left {
+        border-left: 5px solid rgb(0, 65, 0);
+    }
+    /* portfolio */
+    
+    .portfolio {
+        width: 100%;
+    }
+    
+    .portfolio-content div img {
+        height: 300px;
+        width: 100%;
+    }
+    
+    .card {
+        height: 100%
+    }
+    
+    .card img {
+        height: 300px;
+    }
+    /* team */
+    
+    .team-content {
+        width: 80%;
+    }
+    
+    .content-item {
+        background-color: orange;
+        padding: 0;
+    }
+    
+    .content-photo img {
+        width: 100%;
+    }
