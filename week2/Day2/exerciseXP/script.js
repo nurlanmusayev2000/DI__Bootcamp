@@ -30,17 +30,17 @@ Check whether the variable is even or odd.
 If it is even, display: “x is an even number”. Where x is the actual number the user chose.
 If it is odd, display: “x is an odd number”. Where x is the actual number the user chose. */
 
-//let number = prompt("Please type a number");
-let number = 2
+let number = prompt("Please type a number");
+
 if (number % 2 === 0 && number > 0) {
-    //console.log(number + " is an even number")
+    console.log(number + " is an even number")
 } else if (number % 2 === 1) {
-    //console.log(number + " is an odd number")
+    console.log(number + " is an odd number")
 } else if (number == 0) {
-    //console.log("0 is neither odd or even")
+    console.log("0 is neither odd or even")
 } else {
-    //console.log("I said you enter a number!!!!")
-    //alert("You don't know what is number?")
+    console.log("I said you enter a number!!!!")
+    alert("You don't know what is number?")
 }
 
 /* Using the array above, console.log the number of users that are connected to the group chat based on the following rules:
