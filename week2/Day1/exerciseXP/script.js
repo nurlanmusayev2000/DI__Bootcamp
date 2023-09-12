@@ -59,6 +59,7 @@ console.log(a + b) //second expression
 Analyse the code below, what will be the outcome? */
 console.log("question",
     3 + 4 + '5'); //becouse '5' is a string
+    //! 75
 
 
 

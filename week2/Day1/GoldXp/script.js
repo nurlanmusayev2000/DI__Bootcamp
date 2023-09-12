@@ -3,6 +3,8 @@ let sentence = ["my", "favorite", "color", "is", "blue"];
 let sentence1 = sentence[0] + " " + sentence[1] + " " + sentence[2] + " " + sentence[3] + " " + sentence[4];
 console.log(sentence1);
 
+//! sentence.join(" ") daha elverisli
+
 
 //Exercise2
 //Create 2 variables. The values should be strings.
