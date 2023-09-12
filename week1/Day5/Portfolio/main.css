@@ -19,6 +19,7 @@
         background-color: orangered;
         color: white;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         padding: 10px;
         position: fixed;
