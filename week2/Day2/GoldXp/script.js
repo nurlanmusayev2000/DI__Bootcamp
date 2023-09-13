@@ -66,6 +66,8 @@ If the length of the string is less than 3, leave it unchanged. */
 
 let string = prompt("Please add here verb");
 let isIng = string.includes("ing")
+// !!! sertde sozun sonu ing ile bitidiyini yoxlamagini isteyir
+// !!! includes() isletdiyin halda sozun ortasinda ing gelse bele onu true qebul edecek
 if (string.length >= 3 && isIng == false) {
     console.log(string + "ing")
 } else if (string.length >= 3 && isIng == true) {
