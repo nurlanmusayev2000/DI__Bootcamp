@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        let numbers = [123, 8409, 100053, 333333333, 7]
+            /* Loop through the array above and determine whether or not each number is divisible by three.
+            Each time you loop console.log true or false. */
+            /* for (number of numbers) {
+            if (number % 3) {
+           //     console.log(`${number} - this number not divide by 3`)
+            } else {
+         //       console.log(`${number} - this number is divided by 3`)
+            }
+        }
+ */
+
+        //
+
+
+
+        let guestList = {
+            randy: "Germany",
+            karla: "France",
+            wendy: "Japan",
+            norman: "England",
+            sam: "Argentina"
+        }
+
+
+
+        /* Given the object above where the key is the student’s name and the value is the country they are from.
+
+Prompt the student for their name.
+
+If the name is in the object, console.log the name of the student and the country they come from.
+For example: "Hi! I'm [name], and I'm from [country]."
+Hint: You don’t need to use a for loop, just look up the statement if ... in
+
+If the name is not in the object, console.log: "Hi! I'm a guest." */
+        /* 
+                let names = prompt("Pleas add your name with lower cases")
+
+                if (guestList[names] != undefined) {
+                    console.log(`hi my name is ${names} and i am from ${guestList[names]}`)
+                } else {
+                    console.log("hi i am guest")
+                } */
+
+
+
+        let age = [20, 5, 12, 43, 98, 55, 155];
+        /* . Console.log the sum of all the numbers in the age array.
+        2. Console.log the highest age in the array */
+        /*         let sum = 0;
+                for (items of age) {
+                    sum += items;
+
+                }
+
+                console.log(sum)
+         */
+        let beginnig = age[0]
+        for (let i = 0; i < age.length; i++) {
+            if (beginnig < age[i]) {
+                beginnig = age[i]
+            }
+        }
+
+        console.log(beginnig)
+    </script>
+</body>
+
+</html>
