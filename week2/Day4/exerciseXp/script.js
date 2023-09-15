@@ -136,21 +136,24 @@ console.log(changeEnough(14.11, [2, 100, 0, 0])) */
 
 
 //EXERCISE 6
+let hotelprice = 0;
 
 function hotelCost() {
     let numOfDay = prompt("please add a number of nights");
     let hotelprice;
     if (isNaN(numOfDay)) {
-        return alert("Please add a number")
+        alert("Please add a number");
+        hotelCost()
     } else {
         hotelprice = 140 * Number(numOfDay);
 
+
     }
-    return hotelprice
-
-
+    return hotelprice;
 }
 
+hotelCost();
+console.log(hotelprice)
 
 
 function planeRideCost() {
