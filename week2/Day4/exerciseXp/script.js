@@ -12,7 +12,9 @@ function infoAboutPerson(personName, personAge, personFavoriteColor) {
 // infoAboutPerson("Josh", 12, "yellow")
 
 
-
+ // !!! isNaN() methoddu icerisine parametr qebul edir ve false ve ya true oturur
+  // !!! isleme prinspipi hemin metodla qisaca bele olar: input value nu number e cevirirk eger input herfle olarsa number() NaN verer.
+  // !!! hemin number() oturduyunun nan olub olmadigini bilmek ucun isnan islederik
 /* let tip = 1;
 let amountOfBil = prompt("Please add the amount of the bill");
 
@@ -103,8 +105,8 @@ function myBill() {
 }
 
 
-//console.log(myBill())
-//console.log(stock)
+console.log(myBill())
+console.log(stock)
 
 
 
@@ -120,7 +122,8 @@ function changeEnough(itemPrice, amountOfChange) {
         amountOfChange[1] = amountOfChange[1] * 0.10;
         amountOfChange[2] = amountOfChange[2] * 0.05;
         amountOfChange[3] = amountOfChange[3] * 0.01;
-
+// !!! main array i birabasa modifikasiya etmek tovisye olunmur daha sonrasinda istife etmek istediyinizde qarisiqliq yarada biler
+// !!! ayrica variable menimsetmek daha uygundur
         totalcoin += coin;
     }
     if (totalcoin >= itemPrice) {
@@ -142,6 +145,7 @@ function hotelCost() {
     let hotelprice;
     if (isNaN(numOfDay)) {
         return alert("Please add a number")
+        // !!! yeniden prompt elave et
     } else {
         hotelprice = 140 * Number(numOfDay);
 

@@ -9,7 +9,7 @@ let space = 0;
 let checkLeft = " ";
 let lastelement = arrayOfWords.length - 1;
 for (let j = 0; j <= ranking[0].length; j++) {
-    check += " * ";
+    check += "*";
 
 }
 console.log(check)
