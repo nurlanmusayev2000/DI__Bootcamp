@@ -11,20 +11,16 @@ if (regpassword) {
         let player2 = prompt("please add a letter");
         let regex2 = player2.match(/^[A-Za-z]+$/)
         if (regex2 && player2.length < 2) {
-            arrOfPlayer1Consol = player1Consol.split("");
-            if (player1[y] == player2) {
-                arrOfPlayer1Consol[y] = player2;
-                player1Consol = arrOfPlayer1Consol.join("");
-                console.log(player1Consol);
-            } else {
+            for (let j = 0; j < player1.length; j++) {
+                arrOfPlayer1Consol = player1Consol.split("");
+                if (player1[j] == player2) {
 
-                chance--;
-                alert(`you had ${chance} more chance`);
-                y--
+                    arrOfPlayer1Consol[j] = player2;
+                    player1Consol = arrOfPlayer1Consol.join("")
+                    j = player1.length;
+                }
             }
-
-
-
+            console.log(player1Consol)
         }
     }
 } else {
