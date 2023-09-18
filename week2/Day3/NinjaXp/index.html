@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        let person1 = {
+            fullName: "Nurlan Musayev",
+            mass: 80,
+            height: 178,
+            BMI: function() {
+                {
+                    let result = this.mass / (this.height * this.height);
+                    console.log(result)
+                    return result
+                }
+            }
+
+        }
+
+        let person2 = {
+            fullName: "Abbas Xelilov",
+            mass: 90,
+            height: 185,
+            BMI: function() {
+
+                let result = this.mass / (this.height * this.height);
+                return result
+            }
+        }
+
+        person1.BMI();
+    </script>
+</body>
+
+</html>
