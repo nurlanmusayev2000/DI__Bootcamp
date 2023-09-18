@@ -22,10 +22,10 @@ if (regpassword) {
                 }
             }
             if (check == true) {
-                chance--;
-                alert(`you had ${chance} more chance`);
-                y--;
-
+              chance--;
+              alert(`you had ${chance} more chance`);
+              // !!! y--; bu line istifadesi anlasilmir?
+              // !!! chance menfiye gedir 0 dan boyuk olmalidir deye condition elave ede bilersen
             }
             console.log(player1Consol);
         }
