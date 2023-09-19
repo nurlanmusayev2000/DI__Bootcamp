@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!--     <div id="container">Users:</div>
+    <ul class="list">
+        <li>John</li>
+        <li>Pete</li>
+    </ul>
+    <ul class="list">
+        <li>Sarah</li>
+        <li>Dan</li>
+    </ul>
+ -->
+
+    <p>
+        <a id="dI" type="text/html" hreflang="en-us" rel="nofollow" target="_self" href="https://developers.institute/">Developers Institute</a>
+    </p>
+    <p id='text'>DOM Attributes! Yeahhh !!</p>
+
+
+
+    <script>
+        /*         let ulNodes = document.querySelectorAll(".list");
+
+                        for (children of ulNodes) {
+                            console.log(children.firstElementChild)
+                            console.log(children.lastElementChild)
+                        }
+                        ulNodes.forEach(children => {
+                            console.log(children.firstElementChild)
+
+                        });
+                        console.log() */
+
+        let typeEl = document.querySelector("a").getAttribute("type");
+        console.log(typeEl)
+
+        let hreflangEl = document.querySelector("a").getAttribute("hreflang");
+        console.log(hreflangEl)
+
+        let relEl = document.querySelector("a").getAttribute("rel");
+        console.log(relEl)
+
+        let targetEl = document.querySelector("a").getAttribute("target");
+        console.log(targetEl)
+
+        let hrefEl = document.querySelector("a").getAttribute("href");
+        console.log(hrefEl)
+
+        let pStyle = document.getElementById("text").style;
+        pStyle.backgroundColor = "blue";
+        pStyle.color = "white"
+        pStyle.fontSize = "1.5rem"
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        //function logGreeting() {
+        /*             console.log("Nurlan is a Js Developer") 
+                }
+
+                logGreeting(); */
+
+        function ex2(username) {
+            // console.log(`${username} indi aktifdir`)
+        }
+
+        // let names = prompt("add a name");
+        //   ex2(names);
+        ex2("nurlan");
+        ex2("orxan");
+        ex2("eli")
+
+
+
+        /*        function isGreat(a, b, c) {
+                   if (a > b && a > c) {
+                       console.log(`${a} is bigger than others`)
+                   } else if (b > a && b > c) {
+                       console.log(`${b} is bigger than others`)
+                   } else if (c > a && c > b) {
+                       console.log(`${c} is bigger than others`)
+                   } else {
+                       console.log("all of them is in the same age")
+                   }
+               }
+
+
+               isGreat(15, 35, 55)
+
+        */
+        /*       function ex4(myAge) {
+                  let mom = myAge * 2;
+                  let dad = mom * 1.2;
+                  console.log(`${mom} this is my mom age and my dad age is ${dad}`)
+              }
+
+              ex4(20) */
+
+        /* 
+                function min(a, b) {
+                    if (a > b) {
+                        return b + " is minimum"
+                    } else if (a < b) {
+                        return a + " is minimum"
+                    } else {
+                        return "they are equal"
+                    }
+                }
+                let value = min(7, 5);
+                console.log(value) */
+
+        /*      function ex4(myAge) {
+                 let mom = myAge * 2;
+                 return mom
+                 let dad = mom * 1.2;
+                 console.log(`${mom} this is my mom age and my dad age is ${dad}`)
+             }
+
+             let result = ex4(20);
+             console.log(result)
+
+             let person = {
+                 firstName: "Sarah",
+                 eyeColor: "blue",
+                 eat: function() {
+                     console.log("I love chocolate")
+                 }
+             }
+
+             person.eat */
+
+
+        let user = {
+            name: "ali",
+            age: 20,
+            setage(newage) {
+                return this.age = newage;
+            },
+            getYearsBeforeRetirement() {
+                return 65 - this.age
+            }
+        }
+
+        user.setage(25);
+
+        console.log(user.getYearsBeforeRetirement() + " and " + user.age)
+    </script>
+</body>
+
+</html>
