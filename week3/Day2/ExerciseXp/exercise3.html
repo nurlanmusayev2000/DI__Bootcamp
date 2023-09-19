@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p><strong>Hello</strong> I hope you are enjoying <strong>this</strong> class. At the
+        <strong>end</strong> you <strong>will</strong> be great Developers!
+        <strong>Enjoy</strong> the <strong>JavaScript </strong> lessons</p>
+
+    <script>
+        //Declare a global variable named allBoldItems.
+        let allBoldItems = [];
+        //Create a function called getBoldItems() that takes no parameter. This function should collect all the bold items inside the paragraph and assign them to the allBoldItems variable.
+        let getBoldItems = () => {
+            let strongs = document.querySelectorAll("strong");
+            for (bolds of strongs) {
+                allBoldItems.push(bolds)
+            }
+            return allBoldItems
+        }
+        getBoldItems();
+        console.log(allBoldItems);
+
+        //        Create a function called highlight() that changes the color of all the bold text to blue.
+
+        function highlight() {
+            for (one of allBoldItems) {
+                one.style.color = "blue"
+            }
+        }
+
+
+        //        Create a function called returnItemsToDefault() that changes the color of all the bold text back to black.
+        function returnItemsToDefault() {
+            for (one of allBoldItems) {
+                one.style.color = "black"
+            }
+        }
+        /* Call the function highlight() on mouseover (ie. when the mouse pointer is moved onto the paragraph), and the function returnItemsToDefault() on mouseout (ie. when the mouse pointer is moved out of the paragraph). */
+        let par = document.querySelector("p");
+        par.addEventListener("mouseover", highlight);
+        par.addEventListener("mouseout", returnItemsToDefault);
+    </script>
+</body>
+
+</html>
