@@ -30,8 +30,14 @@
         form.addEventListener("submit", (e) => {
             e.preventDefault()
             let inputs = document.querySelectorAll("input");
+
             for (input of inputs) {
-                inputArr.push(input.value)
+                if (input.value != "" && input.value != " ") {
+                    inputArr.push(input.value)
+
+                } else {
+                    alert("there is no valie try again")
+                }
             }
             console.log(inputArr)
         })
