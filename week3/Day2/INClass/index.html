@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button id="jsstyle">Style</button>
+    </div>
+    <!--     <table id="sampleTable" border="1">
+        <tr>
+            <td>Row1 cell1</td>
+            <td>Row1 cell2</td>
+        </tr>
+        <tr>
+            <td>Row2 cell1</td>
+            <td>Row2 cell2</td>
+        </tr>
+    </table>
+
+    <input type="button" onclick="insertRow()" value="Insert row"> -->
+    <script>
+        /*         let row = 2
+
+                                                                            function insertRow() {
+                                                                                let tr = document.createElement("tr");
+                                                                                let table = document.querySelector("tbody");
+                                                                                row++
+                                                                                table.appendChild(tr)
+                                                                                let td1 = document.createElement("td");
+                                                                                let td2 = document.createElement("td");
+                                                                                td1.innerText = `row${row} cell 1`;
+                                                                                td2.innerText = `row${row} cell 2`;
+                                                                                tr.appendChild(td1);
+                                                                                tr.appendChild(td2);
+                                                                            } */
+        let btn = document.querySelector("#jsstyle")
+        let body = document.querySelector("body")
+        let colorArr = ["blue", "green", "red", "white"]
+        let i = 0
+        document.querySelector("button").addEventListener("click", backgroundchange, true)
+        document.querySelector("div").addEventListener("click", backgroundchangediv, true)
+
+        function backgroundchange() {
+            i++
+            body.style.backgroundColor = colorArr[i]
+            if (i == 3) {
+                i = 0;
+            }
+            console.log("btn is clicked");
+        }
+
+        function backgroundchangediv() {
+            i++
+            body.style.backgroundColor = colorArr[i]
+            if (i == 3) {
+                i = 0;
+            }
+            console.log("div is clicked");
+        }
+        btn.addEventListener("mouseover", () => {
+            btn.style.backgroundColor = "black";
+            btn.style.padding = "30px";
+            btn.style.color = "white"
+
+        })
+        btn.addEventListener("mouseout", () => {
+            btn.style.backgroundColor = "lightgrey";
+            btn.style.padding = "15px";
+            btn.style.color = "black"
+
+        })
+    </script>
+</body>
+
+</html>
