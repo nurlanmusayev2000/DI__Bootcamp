@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <select id="colorSelect">
+            <option>Red</option>
+            <option>Green</option>
+            <option>White</option>
+            <option>Black</option>
+        </select>
+        <input type="button" value="Select and Remove">
+    </form>
+
+    <script>
+        //Add a click event listener to the <input type="button">. When clicked on, it should call a function named : removecolor() that removes the selected color from the dropdown list.
+        let form = document.forms[0];
+        let inputButton = form.querySelector("input");
+        let select = document.getElementById("colorSelect");
+        let options = select.options;
+        console.log(options[3].selected);
+
+        inputButton.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            function removecolor() {
+                for (opt of options) {
+                    if (opt.selected == true) {
+
+                        opt.remove();
+                    }
+                }
+            }
+            removecolor();
+        })
+    </script>
+</body>
+
+</html>
