@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Challenge: Mad Libs</title>
+</head>
+
+<body>
+
+    <h1>Mad Libs</h1>
+
+    <form id="libform">
+        <label for="noun">Noun:</label><input type="password" id="noun"><br>
+        <label for="adjective">Adjective:</label><input type="password" id="adjective"><br>
+        <label for="person">Someone's Name:</label><input type="password" id="person"><br>
+        <label for="verb">Verb:</label><input type="password" id="verb"><br>
+        <label for="place">A place:</label><input type="password" id="place"><br>
+        <button id="lib-button">Lib it!</button>
+    </form>
+
+    <p>Generated story:
+        <span id="story"></span>
+    </p>
+
+    <script>
+        //Get the value of each of the inputs in the HTML file when the form is submitted. Remember the event.preventDefault()
+        let form = document.forms[0];
+        let inputArr = []
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+            let inputs = document.querySelectorAll("input");
+
+            for (input of inputs) {
+                if (input.value != "" && input.value != " ") {
+                    inputArr.push(input.value)
+
+                } else {
+                    alert("there is no valie try again")
+                }
+            }
+            console.log(inputArr)
+        })
+    </script>
+
+</body>
+
+</html>
