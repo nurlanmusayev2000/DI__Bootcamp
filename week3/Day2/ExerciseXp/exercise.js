@@ -3,9 +3,11 @@ let form = document.forms[0];
 console.log(form)
     //Retrieve the inputs by their id and console.log them.
 let formById = document.forms[0].fname;
-//console.log(formById)
+console.log(formById)
 //Retrieve the inputs by their name attribute and console.log them.
 let formByName = document.forms[0].firstname;
+console.log("🚀 ~ file: exercise.js:9 ~ formByName:", formByName)
+
 /* When the user submits the form (ie. submit event listener)
 use event.preventDefault(), why ?
 get the values of the input tags,

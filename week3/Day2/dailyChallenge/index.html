@@ -11,7 +11,7 @@
     <h1>Mad Libs</h1>
 
     <form id="libform">
-        <label for="noun">Noun:</label><input type="password" id="noun"><br>
+        <label for="noun">Noun:</label><input type="password" id="noun" ><br>
         <label for="adjective">Adjective:</label><input type="password" id="adjective"><br>
         <label for="person">Someone's Name:</label><input type="password" id="person"><br>
         <label for="verb">Verb:</label><input type="password" id="verb"><br>
@@ -37,9 +37,12 @@
 
                 } else {
                     alert("there is no valie try again")
+                    // return 
+                    //!!! alert etdikden sonra bele function submit olunur return etdikde functiondan cixilir
+                    // !!! elave olraq html form ozunde required den istifade olunsa umumiyyetle submit olmayacaq daha elverisl
                 }
             }
-            console.log(inputArr)
+            console.log(inputArr.join(' ')) /* !!!  bu sekilde yazmaq daha yaxsi */
         })
     </script>
 

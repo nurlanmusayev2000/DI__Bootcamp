@@ -1,59 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-    <div id="root">
-
-    </div>
-
+  <body>
+    <div id="root"></div>
 
     <script>
-        //Create an empty array. For example: let shoppingList=[].
-        let shoppingList = [];
-        //Create a form containing : a text input field and an “AddItem” button. Add this form to the DOM.
-        let rootEl = document.querySelector("#root");
-        let form = `<form name="firstForm">
+      //Create an empty array. For example: let shoppingList=[].
+      let shoppingList = [];
+      //Create a form containing : a text input field and an “AddItem” button. Add this form to the DOM.
+      let rootEl = document.querySelector('#root');
+      let form = `<form name="firstForm" >
             <label for="finp">SomeThing</label>
             <input id="finp" type="text">
             <input type="submit" value="AddItem">
+            <div class="box"></div> 
         </form>`;
-        rootEl.innerHTML = form;
-        //Type what you need to buy in the text input field, then add the new item to the array as soon as you click on the “AddItem” button (Hint: create a function named addItem()).
-        let formCall = document.forms.firstForm;
-        formCall.addEventListener('submit', (e) => {
-            e.preventDefault()
+      rootEl.innerHTML = form;
+      //Type what you need to buy in the text input field, then add the new item to the array as soon as you click on the “AddItem” button (Hint: create a function named addItem()).
+      let formCall = document.forms.firstForm;
+      formCall.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-            function addItem() {
-                let inpVal = formCall.querySelector("#finp").value;
-                shoppingList.push(inpVal);
-            }
-            addItem();
-            formCall.querySelector("#finp").value = " ";
+        function addItem() {
+          let inpVal = formCall.querySelector('#finp').value;
+          shoppingList.push(inpVal);
+          document.querySelector('.box').textContent=shoppingList /* updatelerin gorsenmesi ucun */
+        }
+        addItem();
+        formCall.querySelector('#finp').value = ' ';
 
-            console.log(shoppingList);
-        })
+        console.log(shoppingList);
+      });
 
-        //Add a “ClearAll” button to the DOM, that when clicked on, should call the clearAll() function (see below).
-        let submit2 = document.createElement("button");
-        submit2.setAttribute("id", "clear");
-        submit2.innerText = "Clear";
+      //Add a “ClearAll” button to the DOM, that when clicked on, should call the clearAll() function (see below).
+      let submit2 = document.createElement('button');
+      submit2.setAttribute('id', 'clear');
+      submit2.innerText = 'Clear';
 
-        formCall.appendChild(submit2);
-        formCall.querySelector("button").addEventListener("click", (e) => {
-            e.preventDefault();
+      formCall.appendChild(submit2);
+      formCall.querySelector('button').addEventListener('click', (e) => {
+        e.preventDefault();
 
-            function clearAl() {
-                shoppingList = [];
-            }
-            clearAl()
-        })
+        function clearAl() {
+          shoppingList = [];
+                   document.querySelector('.box').textContent=shoppingList /* updatelerin gorsenmesi ucun*/
+
+        }
+        clearAl();
+      });
     </script>
-</body>
-
+  </body>
 </html>
