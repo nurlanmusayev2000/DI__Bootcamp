@@ -1,0 +1,44 @@
+body {
+    background: linear-gradient(to bottom, #ff0000 0%, #ff99cc 100%);
+    height: 100vh;
+}
+
+.cancelBtn {
+    display: inline-block;
+    color: red;
+}
+
+.listForm,
+.listTasks {
+    text-align: center;
+    padding: 10px;
+}
+
+.listForm input {
+    border: none;
+    margin: 0;
+    background-color: white;
+    padding: 11px;
+    margin-left: -4px;
+}
+
+.listTasks {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 221px;
+    margin: auto;
+}
+
+.listTasks form {
+    border: 0;
+    border-bottom: 1px solid gray;
+    margin-bottom: 2px;
+    padding-bottom: 3px;
+}
+
+.clear {
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
