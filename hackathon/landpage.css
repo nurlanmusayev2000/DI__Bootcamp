@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("landpagesImg/capital-of-azerbaijan-baku.webp");
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 100vh;
+}
+
+section {
+  color: white;
+  font-family: "Fjalla One", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 85%;
+  font-size: 1.5em;
+  margin: 0 100px;
+}
+section h1 {
+  text-transform: uppercase;
+}
+section p {
+  width: 70%;
+}
+
+footer {
+  height: 7%;
+  background-color: rgba(7, 0, 0, 0.986);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 0 5px;
+  align-items: end;
+}
+footer ul {
+  display: flex;
+  list-style-type: none;
+}
+footer ul li {
+  padding: 0 10px;
+}
+footer ul li a {
+  text-decoration: none;
+  color: white;
+}
+footer ul li a:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=landpage.css.map */
