@@ -2,6 +2,7 @@
 let bool = false;
 let leftSideCol = document.querySelector(".colors");
 let colors = ["red", "orange", "orangered", "yellow", "lightgreen", "yellowgreen", "darkgreen", "blue", "aqua", "blueviolet", "pink", "black", "lightcoral", "lightcyan", "lightgray", "lightpink", "lightsalmon", "darkblue", "darkcyan", "green", "white"];
+
 for (let i = 0; i < 21; i++) {
     let cubicadd = `<input class="cubic col-4 "></input>`
     leftSideCol.innerHTML += cubicadd;
