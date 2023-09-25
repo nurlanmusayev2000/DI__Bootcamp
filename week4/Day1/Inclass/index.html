@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        /* //Create a function to check the year given by the user If the year is after 2000, you should display "You are in the 21st century", else you should display "You live in the Middle Age" */
+
+
+        function checkYear(year) {
+            return (year > 2000 ? "You are in the 21st century" : "you live on the middle age")
+        }
+
+
+        //console.log(checkYear(2001))
+
+        /* Using arrow function and ternary operator create a calculator that returns the result of the calculus depending on the operator : +, - , * ,
+
+The function should be able to to take 2 numbers as parameters */
+
+        const numbers = [10, 11, 12, 15, 20];
+        numbers.forEach((element, i) => {
+            return element % 2 == 0 ? console.log(element) : " ";
+        });
+    </script>
+</body>
+
+</html>

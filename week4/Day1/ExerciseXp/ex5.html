@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        const colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
+        const ordinal = ["th", "st", "nd", "rd"];
+        ordinal.shift();
+        ordinal.push("th")
+            /* 
+        Write a JavaScript program that displays the colors in the following order : “1st choice is Blue .” “2nd choice is Green.” “3rd choice is Red.” ect…
+Hint : Use the array methods taught in class and ternary operator.
+        */
+
+        colors.forEach((element) => {
+            for (let ord in ordinal) {
+
+                console.log(`${Number(ord)+1}${ordinal[ord]} choice is ${element}`);
+            }
+
+        })
+    </script>
+</body>
+
+</html>
