@@ -14,17 +14,17 @@ nav {
 nav .listDiv {
   margin-top: 10px;
 }
-nav ul {
+nav .navList {
   display: flex;
   align-items: center;
   padding: 5px;
   list-style-type: none;
 }
-nav ul .fire {
+nav .navList .fire {
   font-size: 1.5em;
   color: firebrick;
 }
-nav ul a {
+nav .navList a {
   text-decoration: none;
   color: white;
   padding: 0 15px;

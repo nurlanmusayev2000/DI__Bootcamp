@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore Azerbaijan</title>
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fjalla+One&family=Heebo&family=Lato&family=Merriweather:wght@300&family=Orbitron&family=Oswald:wght@500&family=Varela+Round&display=swap" rel="stylesheet">
@@ -12,8 +14,7 @@
     />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="landpage.css">
-
+    <link rel="stylesheet" href="cities.css">
 
 </head>
 
@@ -25,21 +26,36 @@
                 </li>
                 <li> <a href="famousPlaces.html">The most famous places</a>
                 </li>
-                <li><a href="cities.html">Cities</a></li>
+                <li class="city-dropdowns"><a href="cities.html">Cities</a><i class="fa-solid fa-caret-left" id="opencity"></i>
+                    <ul class="city-dropdown ">
+
+                    </ul>
+                </li>
                 <li><a href="#">Districts and Villages</a></li>
                 <li><a href="#">Location and History</a></li>
             </ul>
         </div>
+        <form>
+            <input type="search" name="cities" placeholder=" search cities">
+        </form>
         <div>
             <button class="btn btn-success">Sign up</button>
             <button class="btn btn-success">Sign in</button>
         </div>
     </nav>
     <section>
-        <h1>Welcome to Azerbaijan</h1>
-        <p>Here you can explore a lot of information about the country.You can sign up and you can get each new article from people who lives here or who visits to Azerbaijan</p>
-    </section>
+        <ul class="city-dropdown "></ul>
+        <div class="row">
+            <div class=" city-card col-3">
+                <img src="" alt="">
+                <h1></h1>
+                <p></p>
 
+            </div>
+
+        </div>
+        <p>There are more than 50 cities in Azerbaijan.In this website you can see the most popular cities.You can also check the rest of cities form <a href="https://en.wikipedia.org/wiki/List_of_cities_in_Azerbaijan">here</a> or you can <a href="#">Sign up</a>            and check reviews about different locations in Azerbaijan</p>
+    </section>
     <footer>
         <ul>
             <li><a href="https://www.azal.az/en" target="_blank">Azal Airlines</a></li>
@@ -49,7 +65,8 @@
         <p>You can add your feedbacks from <a href="#">here</a></p>
     </footer>
 
-    <script src="script.js"></script>
+
+    <script type="module" src="cities.js"></script>
 </body>
 
 </html>
