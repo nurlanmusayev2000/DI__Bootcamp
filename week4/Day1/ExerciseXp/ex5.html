@@ -13,8 +13,8 @@
     <script>
         const colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
         const ordinal = ["th", "st", "nd", "rd"];
-        ordinal.shift();
-        ordinal.push("th")
+          // ordinal.shift();
+        // ordinal.push("th") ehtiyac yoxdur
             /* 
         Write a JavaScript program that displays the colors in the following order : “1st choice is Blue .” “2nd choice is Green.” “3rd choice is Red.” ect…
 Hint : Use the array methods taught in class and ternary operator.
@@ -25,8 +25,12 @@ Hint : Use the array methods taught in class and ternary operator.
 
                 console.log(`${Number(ord)+1}${ordinal[ord]} choice is ${element}`);
             }
-
+// !!! loop gedecek gereksiz
         })
+
+        //!!! colors array element indexleri ile ordinal elemntleri arasinda elaqe var
+        //!!! blue elementinin indexi +1 = uygun ordinal elementin indexi
+        //!!! console.log({colorsIndex+1}ordinal[colorsIndex+1] choice is {colorselement})
     </script>
 </body>
 
