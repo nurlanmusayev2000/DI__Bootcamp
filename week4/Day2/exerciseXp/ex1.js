@@ -65,23 +65,30 @@ The function should add a div in the nabvar, displaying the name of the user and
 2.The inner function named addIngredients receives 3 ingredients, and displays on the DOM a sentence like The client wants a <size drink> juice, containing <first ingredient>, <second ingredient>, <third ingredient>".
 
 3.Invoke the inner function ONCE inside the outer function. Then invoke the outer function in the global scope.*/
-let sentences;
+let sentences = [];
 
 function makeJuice(sizeOfuice) {
     let ingredArr = [];
     let ings = '';
-    (function addingreident(a, b, c) {
+
+    function addingreident(a, b, c) {
         ingredArr.push(a)
         ingredArr.push(b)
         ingredArr.push(c)
         return ings = `containing ${a}, ${b}, ${c} `;
-    })("300gr sugar", "50 gr solt", "100 gr eroin");
-
-    return sentences = `The client wants a ${sizeOfuice} juice, ` + ings;
+    };
+    addingreident("300gr sugar", "50 gr solt", "100 gr eroin");
+    sentences[0] = `The client wants a ${sizeOfuice} juice, ` + ings;
+    addingreident("300gr flouer", "50 gr milk", "100 gr icecream");
+    sentences[1] = `The client wants a ${sizeOfuice} juice, ` + ings;
 }
 makeJuice("small size");
 let parag = document.querySelector(".par");
-parag.innerText = sentences;
+let parag2 = document.querySelector(".par2");
+
+parag.innerText = sentences[0];
+parag2.innerText = sentences[1];
+
 
 /* 
 In the makeJuice function, create an empty array named ingredients.
