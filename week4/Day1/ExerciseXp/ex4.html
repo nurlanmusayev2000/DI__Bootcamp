@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        const colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
+        /* 
+        Write a JavaScript program that displays the colors in the following order : “1# choice is Blue.” “2# choice is Green.” “3# choice is Red.” ect…
+Check if at least one element of the array is equal to the value “Violet”. If yes, console.log("Yeah"), else console.log("No...")
+Hint : Use the array methods taught in class. Look at the lesson Array Methods.
+        */
+        /* 
+                colors.forEach((element, i) => {
+                    console.log(`${i+1}# choice is ${element}`);
+
+                });
+
+                let r */
+        let result = colors.some(element => {
+            return element == "Violet"
+        });
+        console.log(result ? "yeah" : "No ...f");
+    </script>
+</body>
+
+</html>
