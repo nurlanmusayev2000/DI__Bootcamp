@@ -4,6 +4,7 @@
 let result;
 let resArr = [];
 let conc = [];
+let conc1 = [];
 
 function string_chop(str, num) {
     result = str.split("");
@@ -11,9 +12,16 @@ function string_chop(str, num) {
     for (let i = 0; i < result.length; i++) {
         resArr = result.slice(result[i], i + num)
         result.splice(result[i], num);
-        conc.push(resArr)
+        conc.push(resArr);
+
         i = -1;
     }
-    return conc
+    for (let i = 0; i < conc.length; i++) {
+        let joined = conc[i].join("");
+        conc1.push(joined)
+    }
+
+
+    return conc1
 }
-console.log(string_chop('developers', 2));
+console.log(string_chop('elektrikleshdirdiklerimizdensinizmi', 3));
