@@ -10,6 +10,7 @@ const groceries = {
   },
 };
 
+console.log(groceries);
 /* Create an arrow function named displayGroceries, that console.logs the 3 fruits from the groceries object. Use the forEach method. */
 let displayGroceries = () => {
   groceries.fruits.forEach((element) => {
@@ -17,7 +18,7 @@ let displayGroceries = () => {
   });
 };
 
-//displayGroceries()
+displayGroceries();
 
 /* 
 Create another arrow function named cloneGroceries.
@@ -30,9 +31,11 @@ Change the value of the totalPrice key to 35$. Will we also see this modificatio
 Change the value of the paid key to false. Will we also see this modification in the shopping object ? Why ?
 */
 
+let shopping
+
 let cloneGroceries = () => {
   let user = client;
-  let shopping = groceries;
+  shopping = groceries;
 
   //   !!! groceries variable-in value-su array oldugu ucun object reference olunur.
   // !!! bu zaman shopping array-in value-su hemin deyerin ramda yerlesdiyi yer yazilir
@@ -44,4 +47,12 @@ let cloneGroceries = () => {
   console.log(shopping);
   console.log(groceries);
 };
+
+console.log(groceries);
+
 cloneGroceries();
+
+groceries.totalPrice = '15$';
+
+console.log(groceries);
+console.log(shopping);
