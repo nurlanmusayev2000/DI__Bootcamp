@@ -51,16 +51,89 @@ Using the reduce() method, find the sum of the dogs’ ages in human years. */
         for (let i = 0; i < agearr.length; i++) {
             sum += agearr[i]
         }
-        console.log(sum); //loop to find the sum of the dogs’ ages in human years.
+        // console.log(sum); //loop to find the sum of the dogs’ ages in human years.
 
         let sumofAge = data.reduce((acc, val) => {
-            let humanage = val.age * 7;
-            return acc + humanage
-        }, 0)
-        console.log(sumofAge); //Using the reduce() method, find the sum of the dogs’ ages in human years.
+                let humanage = val.age * 7;
+                return acc + humanage
+            }, 0)
+            //   console.log(sumofAge); //Using the reduce() method, find the sum of the dogs’ ages in human years.
         const userEmail3 = ' cannotfillemailformcorrectly@gmail.com '
-        userEmail3.trim()
-        console.log(userEmail3);
+
+        // console.log(userEmail3.length);
+        let newArr = userEmail3.trim();
+        //console.log(newArr.length);
+
+        const users = [{
+            firstName: 'Bradley',
+            lastName: 'Bouley',
+            role: 'Full Stack Resident'
+        }, {
+            firstName: 'Chloe',
+            lastName: 'Alnaji',
+            role: 'Full Stack Resident'
+        }, {
+            firstName: 'Jonathan',
+            lastName: 'Baughn',
+            role: 'Enterprise Instructor'
+        }, {
+            firstName: 'Michael',
+            lastName: 'Herman',
+            role: 'Lead Instructor'
+        }, {
+            firstName: 'Robert',
+            lastName: 'Hajek',
+            role: 'Full Stack Resident'
+        }, {
+            firstName: 'Wes',
+            lastName: 'Reid',
+            role: 'Instructor'
+        }, {
+            firstName: 'Zach',
+            lastName: 'Klabunde',
+            role: 'Instructor'
+        }];
+        /* Change the structure of the users array. The user’s full name should be the key and the user’s role should be the value. */
+        let emptyObj;
+        const newArray = users.map((val, i) => {
+                let fullName = `${val.firstName} ${val.lastName}`
+                let profession = val.role
+                return [fullName, profession]
+
+            })
+            // console.log(newArray);
+
+        emptyObj = Object.fromEntries(newArray)
+            // console.log(emptyObj);
+
+
+
+        /* Use a for loop to get this output { x: 1, y: 1, z: 2 };
+            Use the reduce() method to get this output { x: 1, y: 1, z: 2 }; */
+        let y = 0
+        const letters = ['x', 'y', 'z', 'z'];
+        for (let i = 0; i < letters.length; i++) {
+            console.log(letters[i] + " i loop");
+            y = i + 1
+            for (y; y < letters.length; y++) {
+                console.log(letters[i]);
+                console.log(letters[y]);
+                if (letters[i] == letters[y]) {
+                    let index = letters.indexOf(letters[i]);
+                    letters.splice(index, 1)
+                    i--;
+                    y--
+                }
+
+                console.log(y);
+                console.log(i);
+
+            }
+
+
+        }
+
+        console.log(letters);
     </script>
 </body>
 
