@@ -141,15 +141,24 @@ Bonus Try to do it on one line.
             ]
         ]
         for (let i = 0; i < trapped.length; i++) {
+            // !!! trapped length undefined olur 
+            // !!! i de her zaman 0 a beraber
             if (typeof(trapped[0]) == "number") {
                 trapped = trapped
             } else {
                 trapped = trapped[0];
                 i--
+                // !!! her defe 1 vadi azaldigi ucun loop yaranir amma tam olaraq for loop a uygun gelmir
             }
         }
 
+        // !!! hell neticesi Duzgundur :)
+
         console.log(trapped);
+
+        // !!! option 2
+    const flatArray = trapped.flat(Infinity)
+    console.log("🚀 ~ file: ex.html:91 ~ flatArray:", flatArray)
     </script>
 </body>
 

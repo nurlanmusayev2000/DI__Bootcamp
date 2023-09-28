@@ -48,6 +48,8 @@ const fullStacks = lastNameOfUs.filter((val) => {
     })
     //console.log(fullStacks);
 
+    // !!! birinci filter edib daha sonra map etsek daha elverisli olar
+
 
 /* Use the reduce() method to combine all of these into a single string. */
 const epic = ['a', 'long', 'time', 'ago', 'in a', 'galaxy', 'far far', 'away'];
@@ -81,3 +83,5 @@ passedStud.forEach(element => {
 });
 
 console.log(sent);
+
+// !!! elave olaraq spread edib yaya bilersen cumle kimi olmasi ucun
