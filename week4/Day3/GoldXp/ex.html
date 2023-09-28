@@ -1,165 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-
-
-
+  <body>
     <script>
-        //Analyze this code, what will be the output ?
-        [1, 2, 3].map(num => {
-            if (typeof num === 'number') return num * 2;
-            return;
-        });
+      //Analyze this code, what will be the output ?
+      [1, 2, 3].map((num) => {
+        if (typeof num === 'number') return num * 2;
+        return;
+      });
 
-        let result = [
-            [0, 1],
-            [2, 3]
-        ].reduce(
-            (acc, cur) => {
-                return acc.concat(cur);
-            }, [1, 2],
-        );
-        //[1,2,0,1,2,3]
-        //console.log(result);
+      let result = [
+        [0, 1],
+        [2, 3],
+      ].reduce(
+        (acc, cur) => {
+          return acc.concat(cur);
+        },
+        [1, 2]
+      );
+      //[1,2,0,1,2,3]
+      //console.log(result);
 
-        const arrayNum = [1, 2, 4, 5, 8, 9];
-        const newArray = arrayNum.map((num, i) => {
-            //console.log(num, i);
-            //alert(num);
-            return num * 2;
-        })
+      const arrayNum = [1, 2, 4, 5, 8, 9];
+      const newArray = arrayNum.map((num, i) => {
+        //console.log(num, i);
+        //alert(num);
+        return num * 2;
+      });
 
-        //What is the value of i ? // i is index.
-        //console.log(newArray);
+      //What is the value of i ? // i is index.
+      //console.log(newArray);
 
-
-        /* 1.Using a method, take this array const array = [[1],[2],[3],[[[4]]],[[[5]]]] and modify it to look like this array: [1,2,3,[4],[5]].
+      /* 1.Using a method, take this array const array = [[1],[2],[3],[[[4]]],[[[5]]]] and modify it to look like this array: [1,2,3,[4],[5]].
 Bonus Try to do it on one line.
 2.Using a method, take this array const greeting = [["Hello", "young", "grasshopper!"], ["you", "are"], ["learning", "fast!"]]; and modify it to look like this array: ["Hello young grasshopper!","you are","learning fast!"].
 3.Turn the greeting array into a string: ‘Hello young grasshopper! you are learning fast!’.
 4.Turn the trapped number 3 const trapped = [[[[[[[[[[[[[[[[[[[[[[[[[[3]]]]]]]]]]]]]]]]]]]]]]]]]] into: [3] */
-        //result of 1
-        const array = [
-            [1],
-            [2],
-            [3],
-            [
-                [
-                    [4]
-                ]
-            ],
-            [
-                [
-                    [5]
-                ]
-            ]
-        ];
-        const modifing = array.reduce((acc, val) => acc.concat(val), [])
+      //result of 1
+      const array = [[1], [2], [3], [[[4]]], [[[5]]]];
+      const modifing = array.reduce((acc, val) => acc.concat(val), []);
 
-        //console.log(modifing);
+      //console.log(modifing);
+
+      //result of 2
+      const greeting = [
+        ['Hello', 'young', 'grasshopper!'],
+        ['you', 'are'],
+        ['learning', 'fast!'],
+      ];
+      let arraysOfSentences = greeting.map((arr, i) => {
+        let withComn = arr.toString();
+        return withComn.replaceAll(',', ' ');
+      });
+
+      // console.log(arraysOfSentences); //result of 2
+      const modifing2 = arraysOfSentences.reduce((acc, val) => {
+        return acc.concat(val);
+      }, []);
+
+      let text = modifing2.toString();
+      let sentenc = text.replaceAll(',', ' '); //result of 3
+      //console.log(sentenc);
+
+      /* 4.Turn the trapped number 3 const trapped = [[[[[[[[[[[[[[[[[[[[[[[[[[3]]]]]]]]]]]]]]]]]]]]]]]]]] into: [3] */
+
+      let trapped = [[[[[[[[[[[[[[[[[[[[[[[[[[3]]]]]]]]]]]]]]]]]]]]]]]]]];
+      console.log(trapped.length)
+    //   for (let i = 0; i < trapped.length; i) {
+       
+    //     // !!! i de her zaman 0 a beraber
+    //     if (typeof trapped[0] == 'number') {
+    //       trapped = trapped;
+    //     } else {
+    //       trapped = trapped[0];
+    //       i--;
+    //       // !!! her defe 1 vadi azaldigi ucun loop yaranir amma tam olaraq for loop a uygun gelmir
+    //     }
+    //   }
+
+      // !!! hell neticesi Duzgundur :)
 
 
-        //result of 2
-        const greeting = [
-            ["Hello", "young", "grasshopper!"],
-            ["you", "are"],
-            ["learning", "fast!"]
-        ];
-        let arraysOfSentences = greeting.map((arr, i) => {
-            let withComn = arr.toString();
-            return withComn.replaceAll(",", " ")
-        })
+//!!! option 3
 
-        // console.log(arraysOfSentences); //result of 2
-        const modifing2 = arraysOfSentences.reduce((acc, val) => {
-            return acc.concat(val);
-
-        }, []);
-
-        let text = modifing2.toString();
-        let sentenc = text.replaceAll(",", " ") //result of 3
-            //console.log(sentenc);
-
-        /* 4.Turn the trapped number 3 const trapped = [[[[[[[[[[[[[[[[[[[[[[[[[[3]]]]]]]]]]]]]]]]]]]]]]]]]] into: [3] */
-
-        let trapped = [
-            [
-                [
-                    [
-                        [
-                            [
-                                [
-                                    [
-                                        [
-                                            [
-                                                [
-                                                    [
-                                                        [
-                                                            [
-                                                                [
-                                                                    [
-                                                                        [
-                                                                            [
-                                                                                [
-                                                                                    [
-                                                                                        [
-                                                                                            [
-                                                                                                [
-                                                                                                    [
-                                                                                                        [
-                                                                                                            [3]
-                                                                                                        ]
-                                                                                                    ]
-                                                                                                ]
-                                                                                            ]
-                                                                                        ]
-                                                                                    ]
-                                                                                ]
-                                                                            ]
-                                                                        ]
-                                                                    ]
-                                                                ]
-                                                            ]
-                                                        ]
-                                                    ]
-                                                ]
-                                            ]
-                                        ]
-                                    ]
-                                ]
-                            ]
-                        ]
-                    ]
-                ]
-            ]
-        ]
-        for (let i = 0; i < trapped.length; i++) {
-            // !!! trapped length undefined olur 
-            // !!! i de her zaman 0 a beraber
-            if (typeof(trapped[0]) == "number") {
-                trapped = trapped
-            } else {
-                trapped = trapped[0];
-                i--
-                // !!! her defe 1 vadi azaldigi ucun loop yaranir amma tam olaraq for loop a uygun gelmir
-            }
+      function recursion(){
+        if (typeof trapped[0] == 'number') {
+          trapped = trapped;
+          return
+        } else {
+          trapped[0] = trapped;
+          console.log("🚀 ~ file: ex.html:97 ~ recursion ~ trapped:", trapped)
+          
+          recursion()
         }
+      }
 
-        // !!! hell neticesi Duzgundur :)
+      recursion()
 
-        console.log(trapped);
 
-        // !!! option 2
-    const flatArray = trapped.flat(Infinity)
-    console.log("🚀 ~ file: ex.html:91 ~ flatArray:", flatArray)
+   
+
+
+
+      console.log(trapped);
+
+    //   // !!! option 2
+    //   const flatArray = trapped.flat(Infinity);
+    //   console.log('🚀 ~ file: ex.html:91 ~ flatArray:', flatArray);
     </script>
-</body>
-
+  </body>
 </html>
