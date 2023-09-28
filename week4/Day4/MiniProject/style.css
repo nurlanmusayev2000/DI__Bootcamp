@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: grey;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    padding: 5px;
+}
+
+.clear button {
+    width: 80%;
+    padding: 1.4rem;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.clear {
+    text-align: center;
+}
+
+
+/* .left-side {
+    grid-template-columns: 3;
+}
+*/
+
+.right-side {
+    display: grid;
+    grid-template-columns: repeat(66, 15px);
+    gap: 3px;
+}
+
+.right-side div {
+    background-color: white;
+}
