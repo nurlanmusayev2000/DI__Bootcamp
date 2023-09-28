@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        let landscape = function() {
+
+            let result = "";
+
+            let flat = function(x) {
+                for (let count = 0; count < x; count++) {
+                    result = result + "_";
+                }
+            }
+
+            let mountain = function(x) {
+                result = result + "/"
+                for (let counter = 0; counter < x; counter++) {
+                    result = result + "'"
+                }
+                result = result + "\\"
+            }
+
+            flat(4);
+            mountain(4);
+            flat(4)
+            console.log(result);
+            return result;
+        }
+
+        landscape()
+            //   ____/''''\\____
+
+
+        const addTo = x => y => x + y;
+        const addToTen = addTo(10); //it return y=>10+y
+        console.log(addToTen(3)); //13
+
+        const curriedSum = (a) => (b) => a + b
+        console.log(curriedSum(30)(1));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        /* Create a function such as mergeWords('Hello')() that returns the following string: 'Hello'
+         */
+
+        function mergeWords(a) {
+            function inFun() {
+                return console.log(a);
+            }
+            return inFun
+        }
+
+        mergeWords('Hello')();
+
+        /* When the function is called without any arguments return a string where all words have been merged into a sentence. */
+        let mergeWord = a => {
+            let inFunc = (nextString) => {
+                if (nextString == undefined) {
+                    return a
+                } else {
+                    return mergeWord(a + " " + nextString)
+                }
+            };
+            return inFunc
+        }
+
+        let retFun = a => nextStr => nextStr == undefined ? a : retFun(`${a} ${nextStr}`);
+        console.log(retFun('There')('is')('no')('spoon.')());
+    </script>
+</body>
+
+</html>
