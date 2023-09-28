@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        const data = [{
+            name: 'Butters',
+            age: 3,
+            type: 'dog'
+        }, {
+            name: 'Cuty',
+            age: 5,
+            type: 'rabbit'
+        }, {
+            name: 'Lizzy',
+            age: 6,
+            type: 'dog'
+        }, {
+            name: 'Red',
+            age: 1,
+            type: 'cat'
+        }, {
+            name: 'Joey',
+            age: 3,
+            type: 'dog'
+        }, {
+            name: 'Rex',
+            age: 10,
+            type: 'dog'
+        }, ];
+
+        /* Use a loop to find the sum of the dogs’ ages in human years.
+Hint: 1 dog year equals 7 human years
+Using the reduce() method, find the sum of the dogs’ ages in human years. */
+        let agearr = [];
+        for (dog of data) {
+            let age = dog.age * 7;
+            agearr.push(age)
+
+        }
+        let sum = 0;
+        for (let i = 0; i < agearr.length; i++) {
+            sum += agearr[i]
+        }
+        console.log(sum); //loop to find the sum of the dogs’ ages in human years.
+
+        let sumofAge = data.reduce((acc, val) => {
+            let humanage = val.age * 7;
+            return acc + humanage
+        }, 0)
+        console.log(sumofAge); //Using the reduce() method, find the sum of the dogs’ ages in human years.
+        const userEmail3 = ' cannotfillemailformcorrectly@gmail.com '
+        userEmail3.trim()
+        console.log(userEmail3);
+    </script>
+</body>
+
+</html>
