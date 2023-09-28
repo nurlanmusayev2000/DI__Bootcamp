@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        class Dog {
+            constructor(name) {
+                this.name = name;
+            }
+        };
+        let onlyName = new Dog("chivava")
+            // console.log(onlyName);
+        class Labrador extends Dog {
+            constructor(name, size) {
+                super(name);
+                this.size = size;
+            }
+        };
+
+        let dog = new Labrador("Chivava", 25)
+            //console.log(dog);
+
+        /* Create a class Animal with the attributes name, type and color. The type is the animal type, for example: dog, cat, dolphin ect … */
+        class Animal {
+            constructor(name, type, color) {
+                this.name = name;
+                this.type = type;
+                this.color = color;
+            }
+        }
+
+        /* Create a class Mamal that extends from the Animal class. Inside the class, add a method called sound(). This method takes a parameter: the sound the animal makes, and returns the details of the animal (name, type and color) as well as the sound it makes. */
+        class Mamal extends Animal {
+            constructor(name, type, color, sound) {
+                super(name, type, color);
+                this.sound = sound
+            }
+            farmerCow() {
+                console.log(`${this.sound} I'm a ${this.type}, named ${this.name} and I'm ${this.color} `);
+            }
+        }
+
+        let animal = new Mamal("lilly", "cow", "brown and white", "mooo")
+        animal.farmerCow()
+        console.log(animal);
+    </script>
+</body>
+
+</html>

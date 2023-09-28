@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        let myObj = {
+            name: "John",
+            lastName: "Doe",
+            age: 25,
+            friends: ["Mark", "Lucie", "Ana"]
+        }
+
+        /* Use the methods above to :
+
+Count how many keys and values are in the object below
+Display : "The x# key is : --- The x# value is : ---". */
+
+        let keys = Object.keys(myObj);
+        let values = Object.values(myObj);
+        console.log(values);
+        console.log(`The ${keys.length} key is :${keys} --- The ${values.length} value is : ${values}"`);
+    </script>
+</body>
+
+</html>
