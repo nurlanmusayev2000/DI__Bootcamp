@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        /* Analyze the code below. What will be the output? */ //i am John Doe from ......
+        const person = {
+            name: 'John Doe',
+            age: 25,
+            location: {
+                country: 'Canada',
+                city: 'Vancouver',
+                coordinates: [49.2827, -123.1207]
+            }
+        }
+
+        const {
+            name,
+            location: {
+                country,
+                city,
+                coordinates: [lat, lng]
+            }
+        } = person;
+
+        //        console.log(`I am ${name} from ${city}, ${country}. Latitude(${lat}), Longitude(${lng})`);
+
+
+        function displayStudentInfo(objUser) {
+            //destructuring
+            let {
+                first: name,
+                last: surname
+            } = objUser;
+
+            console.log("your full name is " + name + " " + surname);
+        }
+
+        //    displayStudentInfo({
+        //         first: 'Elie',
+        //         last: 'Schoppik'
+        //     });
+
+        /* Using the code above, destructure the parameter inside the function and return a string as the example seen below:
+        //output : 'Your full name is Elie Schoppik' */
+
+
+        //use this array
+        const users = {
+            user1: 18273,
+            user2: 92833,
+            user3: 90315
+        }
+
+        //Using methods taught in class, turn the users object into an array:
+        const arrFromObj = Object.entries(users) //[['user1', 18273]['user2', 92833]['user3', 90315]]
+            //console.log(arrFromObj);
+            //Modify the outcome of part 1, by multipling the user’s ID by 2.
+        const result = arrFromObj.map(val => [val[0], val[1] * 2])
+            //  console.log(result);
+    </script>
+</body>
+
+</html>

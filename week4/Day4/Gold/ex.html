@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        /* The function should return a string like the example below  The function should return a string like the example below
+         */
+
+        let obj = {
+            first: 'Elie',
+            last: 'Schoppik'
+        }
+
+        function printFullName(obj) {
+            let fullName = Object.values(obj).toString().replace(",", " ")
+            console.log(`Your full name is ${fullName} `);
+
+            // !!! object destruction da istifade edile biler
+        }
+        /*     printFullName({
+                first: 'Elie',
+                last: 'Schoppik'
+            }) */
+
+
+        /* Create a function that takes an object and returns the keys and values as separate arrays.
+Return the keys sorted alphabetically, and their corresponding values in the same order. */
+        function separate(obj) {
+            let keys = Object.keys(obj);
+            let values = Object.values(obj);
+            console.log(keys.sort());
+            console.log(values.sort());
+
+        }
+
+        separate({
+            key1: true,
+            key2: false,
+            key3: undefined
+        })
+    </script>
+</body>
+
+</html>

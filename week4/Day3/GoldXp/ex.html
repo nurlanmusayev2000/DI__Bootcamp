@@ -69,49 +69,70 @@ Bonus Try to do it on one line.
 
       /* 4.Turn the trapped number 3 const trapped = [[[[[[[[[[[[[[[[[[[[[[[[[[3]]]]]]]]]]]]]]]]]]]]]]]]]] into: [3] */
 
-      let trapped = [[[[[[[[[[[[[[[[[[[[[[[[[[3]]]]]]]]]]]]]]]]]]]]]]]]]];
-      console.log(trapped.length)
-    //   for (let i = 0; i < trapped.length; i) {
-       
-    //     // !!! i de her zaman 0 a beraber
-    //     if (typeof trapped[0] == 'number') {
-    //       trapped = trapped;
-    //     } else {
-    //       trapped = trapped[0];
-    //       i--;
-    //       // !!! her defe 1 vadi azaldigi ucun loop yaranir amma tam olaraq for loop a uygun gelmir
-    //     }
-    //   }
-
-      // !!! hell neticesi Duzgundur :)
-
-
-//!!! option 3
-
-      function recursion(){
-        if (typeof trapped[0] == 'number') {
-          trapped = trapped;
-          return
-        } else {
-          trapped[0] = trapped;
-          console.log("🚀 ~ file: ex.html:97 ~ recursion ~ trapped:", trapped)
-          
-          recursion()
+        let trapped = [
+            [
+                [
+                    [
+                        [
+                            [
+                                [
+                                    [
+                                        [
+                                            [
+                                                [
+                                                    [
+                                                        [
+                                                            [
+                                                                [
+                                                                    [
+                                                                        [
+                                                                            [
+                                                                                [
+                                                                                    [
+                                                                                        [
+                                                                                            [
+                                                                                                [
+                                                                                                    [
+                                                                                                        [
+                                                                                                            [3]
+                                                                                                        ]
+                                                                                                    ]
+                                                                                                ]
+                                                                                            ]
+                                                                                        ]
+                                                                                    ]
+                                                                                ]
+                                                                            ]
+                                                                        ]
+                                                                    ]
+                                                                ]
+                                                            ]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+        for (let i = 0; i < trapped.length; i++) {
+            if (typeof(trapped[0]) == "number") {
+                trapped = trapped
+            } else {
+                trapped = trapped[0];
+                i--
+            }
         }
-      }
 
-      recursion()
-
-
-   
-
-
-
-      console.log(trapped);
-
-    //   // !!! option 2
-    //   const flatArray = trapped.flat(Infinity);
-    //   console.log('🚀 ~ file: ex.html:91 ~ flatArray:', flatArray);
+        console.log(trapped);
+        // !!! option 2
+        const flatArray = trapped.flat(Infinity)
+        console.log(flatArray)
     </script>
   </body>
 </html>
