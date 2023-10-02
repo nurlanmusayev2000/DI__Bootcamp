@@ -116,6 +116,8 @@ function getInput(event) {
 
     inputValue = robots.filter((val) => {
 
+        // !!! input value ve target her birini lovercase etdikde daha duzgun netice verir
+
         return val.name.includes(event.target.value)
     })
 
