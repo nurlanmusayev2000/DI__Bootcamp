@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="form">
+        <input type="text" name="fetchInput">
+        <input type="submit" name="submit">
+    </form>
+    <button class="removeAll">remove All</button>
+    <div class="gif" style="display: flex; flex-wrap: wrap;">
+
+    </div>
+
+
+
+    <script>
+        let inp = document.forms.form.fetchInput;
+        let sbmt = document.forms.form.submit;
+        let imgUrl;
+        document.forms.form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let inputVal = inp.value;
+            getGiph(inputVal);
+            inp.value = " "
+        })
+
+        function getGiph(category) {
+            let callMethod = new XMLHttpRequest();
+            callMethod.open("GET", `https://api.giphy.com/v1/gifs/search?q=${category}&rating=g&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My&limit=10&offset=2`);
+            callMethod.responseType = "json";
+            callMethod.send();
+            callMethod.onload = () => {
+                if (callMethod.status != 200) {
+                    console.log("SMT went wrong");
+                } else {
+                    imgUrl = callMethod.response.data[Math.floor(Math.random() * 10)].images.original.url;
+                }
+
+            }
+            callMethod.onerror = function() {
+                console.log("Request failed");
+            };
+            console.log(imgUrl);
+            return displayGiph()
+
+        }
+
+        function displayGiph() {
+            let cont = document.createElement('div')
+            let imgEl = document.createElement('img');
+            imgEl.setAttribute("src", imgUrl);
+            let del = document.createElement("button");
+            del.innerText = "delete";
+            cont.appendChild(imgEl);
+            cont.appendChild(del);
+            document.querySelector(".gif").appendChild(cont)
+            del.addEventListener("click", (e) => {
+                e.target.parentElement.remove()
+                console.log(e.target.parentElement);
+            })
+
+        }
+
+        document.querySelector(".removeAll").addEventListener("click", () => {
+            document.querySelector(".gif").innerHTML = " "
+        })
+    </script>
+</body>
+
+</html>
