@@ -41,21 +41,21 @@
                     console.log("SMT went wrong");
                 } else {
                     imgUrl = callMethod.response.data[Math.floor(Math.random() * 10)].images.original.url;
+                    displayGiph(imgUrl)
                 }
 
             }
             callMethod.onerror = function() {
                 console.log("Request failed");
             };
-            console.log(imgUrl);
-            return displayGiph()
+
 
         }
 
-        function displayGiph() {
+        function displayGiph(a) {
             let cont = document.createElement('div')
             let imgEl = document.createElement('img');
-            imgEl.setAttribute("src", imgUrl);
+            imgEl.setAttribute("src", a);
             let del = document.createElement("button");
             del.innerText = "delete";
             cont.appendChild(imgEl);
