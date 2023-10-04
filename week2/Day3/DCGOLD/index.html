@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const numbers = [5, 0, 9, 1, 7, 4, 2, 6, 3, 8];
+        /* Using the .toString() method convert the array to a string. */
+        let toStrFromArr = numbers.toString()
+        console.log(typeof(toStrFromArr));
+        /* Using the .join()method convert the array to a string. Try passing different values into the join. */
+        let FromArrToStr = numbers.join("+")
+        console.log(FromArrToStr);
+        let FromArrToStr2 = numbers.join(" ")
+        console.log(FromArrToStr2);
+        /* Sort the numbers array in descending order, do so using for loops (Not using built-in sort methods). */
+        let sorting = numbers.sort((a, b) => (b - a))
+        console.log(sorting);
+    </script>
+</body>
+
+</html>
