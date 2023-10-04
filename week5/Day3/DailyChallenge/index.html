@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        function makeAllCaps(arrOfWord) {
+            return new Promise((resolve, reject) => {
+                let newArr = arrOfWord.every((val) => {
+                    return typeof(val) == "string"
+                })
+                if (newArr) {
+                    let upperWord = arrOfWord.map(el => {
+                        return el.toUpperCase()
+                    })
+                    resolve(upperWord)
+                } else(
+                    reject("there is notstring types")
+                )
+            })
+
+
+        }
+
+        function sortWords(uppercasedArr) {
+            return new Promise((resolve, reject) => {
+                if (uppercasedArr.length > 4) {
+                    resolve(uppercasedArr.sort())
+                } else {
+                    reject("Eror 404")
+                }
+            })
+        }
+
+        makeAllCaps(["alma", "pear", "banana", "oranhe", "kiwi"])
+            .then((arr) => sortWords(arr))
+            .then((result) => console.log(result))
+            .catch(error => console.log(error))
+    </script>
+</body>
+
+</html>
