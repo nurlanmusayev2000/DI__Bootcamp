@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="form1">
+        <input type="text" name="latitudefor1City" placeholder="latitudefor1City">
+        <input type="text" name="longitudefor1City" placeholder="longitudefor1City">
+        <input type="text" name="latitudefor2City" placeholder="latitudefor2City">
+        <input type="text" name="longitudefor2City" placeholder="longitudefor1City">
+        <input type="submit" name="submit">
+    </form>
+    <script>
+        /* You will find the hour of sunrise of two cities, using the API https://sunrise-sunset.org/api. In the HTML file, create a form with 4 inputs:the latitude and longitude of the first citythe latitude and longitude of the second city */
+        const btnlistener = (e) => {
+            e.preventDefault();
+            const data = new FormData(e.target);
+            const objOfForm = Object.fromEntries(data);
+            let {
+                latitudefor1City: latitude1,
+                longitudefor1City: longitude1,
+                latitudefor2City: latitude2,
+                longitudefor2City: longitude2
+            } = objOfForm
+
+            getSun(latitude1, longitude1);
+            getSun(latitude2, longitude2)
+
+
+        }
+
+
+        async function getSun(lat, lang) {
+            let api = await fetch(`https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lang}`);
+            let format = await api.json();
+            console.log(format.results.sunrise);
+        }
+
+        let getForm = document.forms.form1;
+        getForm.addEventListener("submit", btnlistener)
+    </script>
+</body>
+
+</html>
