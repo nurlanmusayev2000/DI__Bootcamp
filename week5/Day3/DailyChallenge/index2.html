@@ -77,7 +77,7 @@
             let par = document.createElement("p");
             par.innerText = word
             document.querySelector("body").appendChild(par)
-            let wordWithoutSpace = word.replace(" ", "");
+            let wordWithoutSpace = word.replaceAll(" ", ",");
             let wordArr = wordWithoutSpace.split("");
             let checkWord = wordArr.every((val) => {
                 return morseJS[val]
