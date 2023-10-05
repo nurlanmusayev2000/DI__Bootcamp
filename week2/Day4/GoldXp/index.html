@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        /* Write a program to check whether a string is blank or not. */
+        function isBlank(a) {
+            if (a == false && typeof(a) == "string") {
+                return true
+            } else {
+                return false
+            }
+        }
+        console.log(isBlank(''));
+
+        console.log(isBlank('abc'));
+
+        /* Write a JavaScript function to convert a string into an abbreviated form. */
+
+        function abbreviated(fullname) {
+            let spaceIndex = fullname.indexOf(" ");
+            let arrOfFn = fullname.split('')
+            let slice = arrOfFn.slice(0, spaceIndex + 2)
+            slice.splice(slice.length, 0, ".")
+            let returnStr = slice.join("")
+            return returnStr
+        }
+
+        console.log(abbreviated("Nurlan Musayev"));
+    </script>
+</body>
+
+</html>

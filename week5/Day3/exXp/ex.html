@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        /* Create a function called compareToTen(num) that takes a number as an argument.   The function should return a Promise:the promise resolves if the argument is less than or equal to 10 the promise rejects if argument is greater than 10. */
+        const compareToTen = (num) => {
+            return new Promise((resolve, reject) => {
+                if (num <= 10) {
+                    resolve("this number is not bigger than 10")
+                } else {
+                    reject("this is bigger than 10")
+                }
+            })
+
+        }
+        compareToTen(15)
+            .then(result => console.log(result))
+            .catch(error => console.log(error))
+
+
+        /* Create a promise that resolves itself in 4 seconds and returns a “success” string. */
+
+        let promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(console.log("success"))
+            }, 4000)
+        })
+
+
+
+        /* 
+Use Promise.resolve(value) to create a promise that will resolve itself with a value of 3.
+Use Promise.reject(error) to create a promise that will reject itself with the string “Boo!” */
+
+        let num = Promise.resolve(console.log(3));
+        let str = Promise.reject(console.log("boo"))
+    </script>
+</body>
+
+</html>

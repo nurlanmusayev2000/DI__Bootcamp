@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="font-size: 3rem;">
+
+
+    <script>
+        const morse = `{
+            "0": "-----",
+            "1": ".----",
+            "2": "..---",
+            "3": "...--",
+            "4": "....-",
+            "5": ".....",
+            "6": "-....",
+            "7": "--...",
+            "8": "---..",
+            "9": "----.",
+            "a": ".-",
+            "b": "-...",
+            "c": "-.-.",
+            "d": "-..",
+            "e": ".",
+            "f": "..-.",
+            "g": "--.",
+            "h": "....",
+            "i": "..",
+            "j": ".---",
+            "k": "-.-",
+            "l": ".-..",
+            "m": "--",
+            "n": "-.",
+            "o": "---",
+            "p": ".--.",
+            "q": "--.-",
+            "r": ".-.",
+            "s": "...",
+            "t": "-",
+            "u": "..-",
+            "v": "...-",
+            "w": ".--",
+            "x": "-..-",
+            "y": "-.--",
+            "z": "--..",
+            ".": ".-.-.-",
+            ",": "--..--",
+            "?": "..--..",
+            "!": "-.-.--",
+            "-": "-....-",
+            "/": "-..-.",
+            "@": ".--.-.",
+            "(": "-.--.",
+            ")": "-.--.-"
+       }`
+
+        let example = JSON.parse(morse);
+        let morseObj = JSON.parse(morse);
+
+        function toJs(morse) {
+            return new Promise((resolve, reject) => {
+                if (morseObj == {}) {
+                    reject("object is empty")
+                } else(
+                    resolve(morseObj)
+                )
+            })
+        }
+
+        function toMorse(morseJS) {
+            let word = prompt();
+            let par = document.createElement("p");
+            par.innerText = word
+            document.querySelector("body").appendChild(par)
+            let wordWithoutSpace = word.replaceAll(" ", ",");
+            let wordArr = wordWithoutSpace.split("");
+            let checkWord = wordArr.every((val) => {
+                return morseJS[val]
+            })
+
+
+            return new Promise((resolve, reject) => {
+                if (checkWord) {
+                    resolve(wordArr)
+                } else {
+                    reject("the letters and icons doesnt matches with mors");
+                }
+
+            })
+        }
+
+        function joinWordswithMorse() {
+            toJs(morse).then((result) => {
+                return toMorse(result);
+
+            }).then((res) => {
+                joinWords(res)
+            })
+
+
+        }
+
+        joinWordswithMorse();
+
+
+        function joinWords(morseTranslation) {
+            let fltr = morseTranslation.map((val) => {
+                let morseabc = morseObj[val]
+                let par = document.createElement("p");
+                par.innerText = morseabc
+                document.querySelector("body").appendChild(par)
+
+
+            })
+        }
+    </script>
+</body>
+
+</html>
