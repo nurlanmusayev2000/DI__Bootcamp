@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+        function resolveAfter2Seconds() {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve('resolved');
+                }, 2000);
+            });
+        } //when you call this func it will return "resolved" 2 second later
+
+        async function asyncCall() {
+            console.log('calling'); //calling
+            let result = await resolveAfter2Seconds();
+            console.log(result); //..2 second later "resolved"
+        }
+
+        asyncCall();
+    </script>
+
+</body>
+
+</html>

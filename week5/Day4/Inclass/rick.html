@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+        let getCharacterData = async(id) => {
+            let a = await fetch(`https://rickandmortyapi.com/api/character/${id}`)
+            let data = await a.json();
+            return data
+        }
+        getCharacterData(5).then((res) => {
+            console.log(res);
+        }).catch(err => console.log(err))
+    </script>
+</body>
+
+</html>
