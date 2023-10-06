@@ -14,8 +14,24 @@
 
 
     <script>
-        let form = document.forms.form1;
-        console.log(form);
+        function takeWord(a, b) {
+
+        }
+
+        async function getForm() {
+            let getf = location.href
+            let json = JSON.stringify(getf);
+            let nme = json.indexOf("=")
+            let frsAnd = json.indexOf("&");
+            let fName = json.substring(nme + 1, frsAnd)
+            let delet = json.slice(frsAnd + 1, json.length);
+            console.log(fName);
+            let snme = delet.indexOf("=")
+            let lstAnd = delet.indexOf("&");
+            let lName = delet.substring(snme + 1, lstAnd)
+            console.log(lName);
+        }
+        getForm()
     </script>
 </body>
 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        fetch("https://www.swapi.tech/api/starships/9/")
+            .then(response => response.json())
+            .then(objectStarWars => console.log(objectStarWars.result));
+
+        async function convert() {
+            let a = await fetch("https://www.swapi.tech/api/starships/9/");
+            let then = await a.json();
+            console.log(then.result);
+        }
+
+        convert();
+    </script>
+</body>
+
+</html>

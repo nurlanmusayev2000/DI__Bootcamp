@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        fetch("https://api.chucknorris.io/jokes/random?categories")
+            .then((res) => {
+                if (res.ok == true) {
+                    return res.json();
+                } else {
+                    throw new Error("Wrong post")
+                }
+            }).then((result) => {
+                console.log(result.value);
+            })
+            .catch((res) => {
+                console.log(res);
+            })
+    </script>
+</body>
+
+</html>
