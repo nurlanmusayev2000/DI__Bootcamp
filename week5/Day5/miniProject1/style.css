@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background-image: url("https://i.gifer.com/Ir4.gif");
+}
+
+h1 {
+    color: yellow;
+    text-align: center;
+    font-size: 5rem;
+    padding: 10px;
+    margin-bottom: 35px;
+    font-family: 'Playfair Display', serif;
+}
+
+.container {
+    border: 2px solid yellow;
+    height: 50%;
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+}
+
+p {
+    font-size: 1rem;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+button {
+    text-align: center;
+    padding: 0 5px;
+    margin: 5px;
+}
+
+.btn {
+    text-align: center;
+    margin: auto;
+    width: 50px;
+}
+
+.animation {
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 10rem;
+    margin: 37px;
+}
+
+.passive {
+    display: none;
+}
+
+.active {
+    display: none;
+}
