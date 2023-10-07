@@ -33,3 +33,30 @@ input {
     background-color: rgb(97, 19, 170, 0.8);
     color: white;
 }
+
+@media (max-width: 838px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    h3 {
+        font-size: 1rem;
+    }
+    select {
+        width: 70%;
+    }
+    input {
+        width: 70%;
+    }
+}
+
+@media (max-width: 678px) {
+    .converter {
+        width: 60%;
+    }
+}
+
+@media (max-width: 400px) {
+    .converter {
+        width: 90%;
+    }
+}
