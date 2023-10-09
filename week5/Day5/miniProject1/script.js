@@ -15,6 +15,7 @@ async function getStarApi() {
     } else {
         throw new Error("api is not correct");
     }
+    // !!! try catch blockundan da istifade ede bilersen
 }
 
 function activity() {
