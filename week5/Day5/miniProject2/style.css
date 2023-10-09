@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-image: url("https://www.slideteam.net/media/catalog/product/cache/1280x720/d/o/dollar_background_stock_photo_Slide01.jpg");
+}
+
+.converter {
+    overflow-y: scroll;
+    background-color: rgb(97, 19, 170, 0.5);
+    width: 40%;
+    height: 60vh;
+    text-align: center;
+    color: white;
+}
+
+form select,
+input {
+    background-color: rgb(97, 19, 170, 0.8);
+    color: white;
+}
+
+@media (max-width: 838px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    h3 {
+        font-size: 1rem;
+    }
+    select {
+        width: 70%;
+    }
+    input {
+        width: 70%;
+    }
+}
+
+@media (max-width: 678px) {
+    .converter {
+        width: 60%;
+    }
+}
+
+@media (max-width: 400px) {
+    .converter {
+        width: 90%;
+    }
+}
