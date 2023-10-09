@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokedoxPhoto {
+    width: 40%;
+    position: relative;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.randomPokes {
+    background-color: green;
+    border-radius: 50%;
+    padding: 5%;
+    position: absolute;
+    top: 66.5%;
+    background-color: transparent;
+    right: 8.5%;
+}
+
+.left-button {
+    position: absolute;
+    top: 72%;
+    left: 16%;
+    background-color: transparent;
+    width: 28px;
+}
+
+.right-button {
+    position: absolute;
+    top: 72%;
+    left: 24%;
+    background-color: transparent;
+    width: 28px;
+}
+
+.screen {
+    background-color: green;
+    width: 180px;
+    position: absolute;
+    height: 150px;
+    top: 5%;
+    background-color: transparent;
+    left: 33%;
+}
+
+.poke-details {
+    background-color: gray;
+    width: 35%;
+    height: 120px;
+    position: absolute;
+    bottom: 10%;
+    left: 32%;
+    background-color: transparent;
+}
