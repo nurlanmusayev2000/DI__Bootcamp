@@ -19,7 +19,7 @@
 -- birth_date DATE 
 -- )
 set datestyle = dmy
-INSERT INTO students (id , first_name , last_name , birth_date)
+INSERT INTO students (id , first_name , last_name , birth_date) /* id qeyd olunmur add etdiyimiz columnlari qeyd edirik */
 VALUES ('Marc' , 'Benichu' , '02/11/1998'),
 ('Yoan' , 'Cohen' , '03/12/2010'),
 ('Amelia' , 'Dux' , '07/04/1996'),
@@ -41,6 +41,14 @@ where first_name='Marc' OR last_name='Benichu'
 
 select first_name , last_name from students
 where first_name like '%a%'
+-- !!!
+select first_name , last_name from students
+where first_name like '%a%' /* yalniz ortadaki a */
+select first_name , last_name from students
+where first_name like 'A%' /* first letter a */
+select first_name , last_name from students
+where first_name ilike '%a%' /* hem middle hem first letter a Caseinsensitive */
+-- !!!
 
 
 select * from students where birth_date>'01/01/2000'

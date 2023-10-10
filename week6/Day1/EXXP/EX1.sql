@@ -49,7 +49,7 @@ select * from items
 --2.
 select * from items where item_price>80
 --3.
-select * from items where item_price<300
+select * from items where item_price<300 /* included <= */
 --4.
 select * from customers where customer_lastname='Smith'
 select * from customers where customer_lastname='Jones'
