@@ -51,7 +51,28 @@ $birthdate$ LANGUAGE plpgsql;
 SELECT * FROM given_price('John')
 	  --??????????????????????????
 	   
-	   
+-- !!! solution
+    CREATE or REPLACE FUNCTION user_orders (ord INT, usr varchar(50)) 
+    -- iki parametr qebul edir birinci order id / ikinci userin last name i
+    RETURNS INT AS $totalprice$ 
+    -- total price integer return edecek
+    BEGIN 
+    -- func baslama bloku
+       RETURN(
+        --  secilmis user ve orderin price i return edir
+           SELECT price FROM orders 
+           INNER JOIN users ON users.user_id = orders.user_id
+           INNER JOIN items ON items.item_id = orders.item_id 
+           WHERE orders.order_id = ord AND users.last_name = usr
+       );
+    END;
+    -- func bitme bloku
+    $totalprice$ LANGUAGE plpgsql;
+    -- standart prosedur kod bloku postgresql ve func haqqinda melumat
+
+    SELECT * FROM user_orders(5050, 'Clooney');
+    
+    -- !!! 
 	   
 	   
 	   

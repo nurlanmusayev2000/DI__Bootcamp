@@ -21,10 +21,13 @@ SELECT first_name ,last_name , salary FROM employees WHERE salary BETWEEN 10000 
 --Write a query to display the first_name, last_name and hire date of all employees who were hired in 1987.
 
 SELECT first_name ,last_name , hire_date FROM employees WHERE hire_date > '01-01-1987'
+-- !!! bele olan halda 1987 + butun illeri nezere alacaq yalniz 1987 lazim idi
+-- !!! BETWEEN '1987-01-01' and '1987-12-31'
 
 --Write a query to get the all employees whose first_name has both the letters ‘c’ and ‘e’.
  
 SELECT * FROM employees WHERE first_name like '%c%' AND first_name like '%e%'
+-- !!! ilike for case insensitivity
 
 --Write a query to display the last_name, job, and salary of all the employees who don’t work as Programmers or Shipping Clerks, and who don’t receive a salary equal to $4,500, $10,000, or $15,000.
 
@@ -35,7 +38,8 @@ SELECT * FROM jobs
 SELECT employees.last_name , jobs.job_title , employees.salary
 FROM employees
 JOIN jobs
-ON employees.job_id = jobs.job_id WHERE jobs.job_id != 9 AND jobs.job_id != 17 AND salary !=4500 AND salary !=10000 AND salary !=15000
+ON employees.job_id = jobs.job_id 
+WHERE jobs.job_id != 9 AND jobs.job_id != 17 AND salary !=4500 AND salary !=10000 AND salary !=15000
 
 
 --Write a query to display the last names of all employees whose last name contains exactly six characters.
@@ -54,5 +58,9 @@ on jobs.job_id = employees.job_id
 --Write a query to select all information of employees whose last name is either ‘JONES’ or ‘BLAKE’ or ‘SCOTT’ or ‘KING’ or ‘FORD’.
 
 select * FROM employees WHERE last_name = 'King'  OR last_name = 'Scott'
+
+-- !!! option 2
+    SELECT * FROM employees WHERE last_name IN ('Jones', 'Blake', 'Scott', 'King', 'Ford')
+-- !!!
 
 

@@ -51,6 +51,10 @@ SELECT Upper(first_name) FROM employees
 
 SELECT 	substring(first_name from 1 for 3) FROM employees
 
+-- !!! option  2
+  SELECT SUBSTRING(first_name, 1, 3) FROM employees;
+--   !!!
+
 --Write a query to get the full names of all the employees in the employees table. You have to include the first name and last name.
 
 SELECT concat(first_name , ' ' , last_name) FROM employees
@@ -59,9 +63,19 @@ SELECT concat(first_name , ' ' , last_name) FROM employees
 
 SELECT concat(first_name , ' ' , last_name) as f_name , char_length(first_name) + char_length(last_name)  FROM employees
 
+-- !!! option  2
+ select concat(first_name,' ', last_name), length(concat(first_name,' ', last_name)) as "length" from employees
+ --   !!!
 --Write a query to check whether the first_name column of the employees table contains any numbers.
 
 SELECT first_name FROM employees WHERE first_name ~ '[0-9]'
+
+-- !!! option  2
+    select * from employees where first_name ~ '\d';
+-- ~ for regex
+-- \ escape operator
+-- d regex for number
+ --   !!!
 
 SELECT * FROM employees LIMIT 10;
 
