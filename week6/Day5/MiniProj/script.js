@@ -18,4 +18,8 @@ form.addEventListener('submit', (e) => {
     name.value = "";
     description.value = "";
     checking.value = ""
+    endDate.value = "";
+    startDate.value = "";
 })
+
+// !!! local storage overwrite itself sometimes
