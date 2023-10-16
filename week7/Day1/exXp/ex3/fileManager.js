@@ -1,6 +1,10 @@
 const readthis = (a) => {
     const fs = require('fs');
-    let read = fs.readFile(a, utf - 8, (data) => {
+    let read = fs.readFile(a, 'utf-8', (err, data) => {
+        if (err) {
+            console.error(err)
+            return
+        }
         console.log(data);
     })
 }
