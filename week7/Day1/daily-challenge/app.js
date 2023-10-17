@@ -1,7 +1,10 @@
-import chalk from "chalk";
+// import chalk from "chalk";
 /* let greeting = require('./greeting'); */
 /* import colorFul from "./colorful-message";
 colorful() */
 
 import colorFul from "./colorful-message";
-colorFul(chalk.blue.colorFul())
+
+// !!!
+colorFul('hello world');
+// !!

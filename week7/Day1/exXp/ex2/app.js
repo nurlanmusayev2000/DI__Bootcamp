@@ -5,4 +5,5 @@ let ages = person.map((val, ind) => {
     if (ind == person.length - 1) {
         console.log(a / (person.length - 1));
     }
+    // !! average age isteyirse yaslari sum i birbasa length e bole bilersen
 })
