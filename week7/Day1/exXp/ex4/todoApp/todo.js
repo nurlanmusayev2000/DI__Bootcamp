@@ -22,4 +22,4 @@ class TodoList {
     }
 }
 
-module.export = TodoList
+module.exports = TodoList
