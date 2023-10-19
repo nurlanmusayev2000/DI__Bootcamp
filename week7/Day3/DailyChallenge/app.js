@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const router = require('./routes.js');
 
+// bodyParser burada elave et ki her route ucun aid olsun
 
 app.use('/', router);
 

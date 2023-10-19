@@ -24,7 +24,7 @@ let i = -1;
 let score = 0
 
 router.get('/quiz', (req, res) => {
-    if (i < 2) {
+    if (i < 2) { /* array length ile isle dynamic olsun */
         i++;
         console.log(i);
         res.send(triviaQuestions[i].question);
@@ -57,7 +57,7 @@ router.post('/quiz', (req, res) => {
         } else {
             res.send("unfortunately your answer is wrong")
         }
-    } else {
+    } else { /* status error elave et ya da throw error */
         res.send("something went rong")
     }
 })
