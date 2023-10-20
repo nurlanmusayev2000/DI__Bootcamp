@@ -27,4 +27,7 @@ app.get("/books/:id", (req, res) => {
         res.send(err)
     })
 })
+
+// !!! error response gonderdikde statusunu da qeyd et
+
 app.listen(5000)

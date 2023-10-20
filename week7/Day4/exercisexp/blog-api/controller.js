@@ -48,6 +48,7 @@ const updatePost = (req, res) => {
 
 }
 
+
 const delPost = (req, res) => {
     const id = req.params.id;
     knex("posts").select().where({ id: id }).del().then((val) => {
@@ -59,6 +60,7 @@ const delPost = (req, res) => {
 
 }
 
+// !!! error response gonderdikde statusunu da qeyd et
 
 module.exports = {
     getPosts,
