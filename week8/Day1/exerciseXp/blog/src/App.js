@@ -24,3 +24,6 @@ class Car extends React.Component {
 //}
 
 //export default FullName;
+
+// !!! global variables yerine her birini ozune uygun component icerisinde vermek daha uygun
+// !!! class componentinden istifade zamani constructor da elave et

@@ -6,3 +6,6 @@ test('renders learn react link', () => {
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+// !!! test file sonlugu uygun deyil
+// !!! jest functionlari test etmek ucun istifade olan library dir
