@@ -1,7 +1,5 @@
 import React from "react"
-import { BsFillBuildingFill } from "react-icons/bs"
-import {GiEarthAmerica} from "react-icons/gi"
-import {SiHomebridge} from "react-icons/si"
+
 const Card = (props)=>{
 
 
@@ -11,7 +9,7 @@ const Card = (props)=>{
 			return(
 				<>
 				<div className="card">
-					<p></p>
+					<p>{item.icon}</p>
 				</div>
 				<div>
 						<h1>{item.title}</h1>
