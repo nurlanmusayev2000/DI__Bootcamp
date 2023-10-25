@@ -9,14 +9,15 @@ constructor(){
 
 }
 
+
 checExercise(e){
 
-if(this.state.isToggleOn===true){
-e.target.innerText= "ON"
-this.state.isToggleOn = false;
-}else{
-e.target.innerText= "OFF"
-this.state.isToggleOn = true;
+	if(this.state.isToggleOn===true){
+	e.target.innerText= "ON"
+	this.state.isToggleOn = false;
+	}else{
+	e.target.innerText= "OFF"
+	this.state.isToggleOn = true;
 
 }
 
@@ -25,17 +26,17 @@ this.state.isToggleOn = true;
 
 
 clickMe(){
-alert("hello")
+	alert("hello")	
 }
 
 
 
 handleKeyDown(e){
 
-if (e.key==="Enter") {
-		alert(`${e.key} key was pressed , your input is ${e.target}	`)
-
-}}
+	if (e.key==="Enter") {
+			alert(`${e.key} key was pressed , your input is ${e.target}	`)
+	}
+}
 
 render(){
 

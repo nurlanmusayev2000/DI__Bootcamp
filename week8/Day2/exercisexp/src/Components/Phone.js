@@ -17,7 +17,9 @@ class Phones extends Component{
 			this.setState(state=>{
 			return {color:"blue"}
 			})
-
+// !!! eger color evveki deyerden asili olaraq deyisilecekse arrow function istifade etmek uygundur
+			// !!! arrow dunc parametrine state in evvelki deyeri dusur
+			// !!! birbasa evvelki deyerden asili olmadan deyisme zamani istifadesine ehtiyac yoxdur
 
 
 	}

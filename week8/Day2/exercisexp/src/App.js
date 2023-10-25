@@ -12,6 +12,7 @@ const App = ()=>{
 	<>
 	<Cars carModel = {carinfo.name} />,
 	<Size size="small" />
+		{/* !!! garage componentinin icerisine props kimi size small oturmek lazimdir */}
 	<Click/>
 	<Phones/>
 	</>

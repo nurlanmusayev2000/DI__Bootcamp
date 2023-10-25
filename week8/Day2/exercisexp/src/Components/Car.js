@@ -5,6 +5,7 @@ constructor(){
 	super();
 	this.state ={color:"red"}
 }
+// !!! props istifade zamani constructorda da qeyd etmek daha duzgun yazilisdir
 	render(){
 const {carModel} = this.props
 
