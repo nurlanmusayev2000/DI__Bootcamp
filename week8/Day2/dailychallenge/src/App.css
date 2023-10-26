@@ -1,0 +1,24 @@
+.cont {
+    margin: 15px;
+    border: 1px solid;
+    background-color: darkkhaki;
+    padding: 10px;
+    font-size: 2rem;
+}
+
+.cont span {
+    margin: 0 20px;
+}
+
+.cont button {
+    background-color: unset;
+    border: none;
+    color: darkgreen;
+    font-size: 1.5rem;
+    position: absolute;
+    right: 30px;
+}
+
+h1 {
+    text-align: center;
+}
