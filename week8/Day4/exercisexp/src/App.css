@@ -1,0 +1,23 @@
+.active {
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+    border-radius: 15px;
+    margin: 5px;
+}
+
+li>a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 5px;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    gap: 15px;
+}
+
+li {
+    margin: 5px;
+}
