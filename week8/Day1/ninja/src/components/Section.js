@@ -3,6 +3,8 @@ import Card from "./SectionCard";
 import { BsFillBuildingFill } from "react-icons/bs"
 import {GiEarthAmerica} from "react-icons/gi"
 import {SiHomebridge} from "react-icons/si"
+
+//!!! component adlarini fayl adlarina uygun qeyd et
 const Middle =()=>{
 	const parts = [
 		{

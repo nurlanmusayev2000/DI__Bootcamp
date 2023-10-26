@@ -6,6 +6,7 @@ const Card = (props)=>{
 
 	return(
 		props.cards.map((item)=>{
+			// ! map etdikde key ver
 			return(
 				<>
 				<div className="card">

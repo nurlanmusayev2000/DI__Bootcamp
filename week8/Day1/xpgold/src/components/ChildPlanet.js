@@ -12,6 +12,7 @@ render(){
 	return(
 		<ul className="list-group ">
 		{this.props.planetArr.map((item)=>{
+			// !! map vererken key istifade et
 		return(
 
 					<li className="list-group-item">{item}</li>

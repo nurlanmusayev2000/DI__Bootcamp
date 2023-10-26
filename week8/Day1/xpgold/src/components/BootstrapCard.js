@@ -22,4 +22,6 @@ console.log(props.celebrities);
 	)
 }
 
+// !! diger komponentere uygun gelmesi ucun instructiondan ferqli olaraq function kimi yazmaq uygun
+
 export default Html

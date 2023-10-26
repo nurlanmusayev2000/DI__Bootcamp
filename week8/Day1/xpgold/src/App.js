@@ -27,6 +27,7 @@ function App() {
   ]
     return (<>
       <Html  celebrity={celebrities} />
+      {/* !!! componentlerin adini context e uygun istifade et */}
       <Planetler />
       </>
     );
