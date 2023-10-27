@@ -9,6 +9,12 @@ const Skills=data.Skills[0].SkillSet.map((item)=>(
 	<p>{item.Name}  </p>
 ))
 
+// !! component map edirsense classin ya da func componentinin icerisinde vermek uygun global yerine
+
+// !!! her file da bir component yarat
+// !! iki componenti birlesdirmek isteyirsense yeni umumi component yaradib ikisini de cagir
+
+
 class Example1 extends Component{
 
 

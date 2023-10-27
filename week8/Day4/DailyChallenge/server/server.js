@@ -5,6 +5,7 @@ const bp = require("body-parser")
 app.use(cors());
 app.use(bp.urlencoded())
 app.use(bp.json())
+
 app.get("/api/hello", (req, res) => {
     res.send("Hello From express")
 

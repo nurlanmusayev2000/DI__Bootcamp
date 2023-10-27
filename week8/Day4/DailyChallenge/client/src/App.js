@@ -32,8 +32,10 @@ async  componentDidMount(){
         body: JSON.stringify({message:insideOfForm})
       })
       const res = await postData.json();
+       console.log(this.state);
+      
      return  messageFromBack = res
-      console.log(this.state);
+     
 
   }
 
