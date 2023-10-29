@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.App {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    justify-content: center;
+    gap: 25px;
+}
+
+.card {
+    width: 18rem;
+    cursor: pointer;
+}
+
+img {
+    height: 300px;
+    padding: 8px;
+}
+
+.card:hover {
+    box-shadow: 2px 2px 2px 2px;
+}
+
+.navBar {
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    color: white;
+    box-shadow: 1px 3px 5px 1px;
+    margin-bottom: 4px;
+}
+
+.navBar h6 {
+    text-align: end;
+    margin-right: 10px;
+}
+
+.title {
+    background-color: red;
+    color: white;
+    box-shadow: 1px 3px 5px 1px black;
+    margin-bottom: 8px;
+    padding: 5px;
+}
