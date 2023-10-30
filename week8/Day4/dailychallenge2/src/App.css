@@ -1,0 +1,47 @@
+.card {
+    text-align: center;
+    border: 1px solid;
+    width: 40%;
+}
+
+.App {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.listOfCountries {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 2;
+    padding: 0;
+}
+
+.listOfCountries li {
+    padding: 10px 0;
+    margin: 1px;
+    border: 1px solid none;
+    width: 80%;
+    border-left: 8px solid yellow;
+    border-radius: 8px;
+    background-color: gainsboro;
+}
+
+#countrytInp {
+    padding: 5px 65px;
+}
+
+button {
+    width: 100%;
+    padding: 5px;
+    font-size: 1.1rem;
+    background-color: yellow;
+    border: 1px solid grey;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin: 5px 0 0 0;
+}
