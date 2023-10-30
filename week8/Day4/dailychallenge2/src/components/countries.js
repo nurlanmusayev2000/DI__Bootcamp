@@ -1,3 +1,5 @@
+// !! array icerinde olmali ki map oluna bilsin
+
 export default `
 Afghanistan
 Albania

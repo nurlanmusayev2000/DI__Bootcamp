@@ -2,6 +2,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Card from './components/card';
 
+// !! ayrica componentlerle isle
+
 function App() {
   return (<>
     <div className='navBar'>

@@ -1,6 +1,12 @@
 import {useState} from 'react';
 import './App.css';
 
+// !!! bir file da bir component olmalidir
+//  !!
+/* 1. todo item
+2. todolist
+3. app */
+
 function App() {
   return (
     <div className="App">
@@ -21,6 +27,9 @@ async function handleEnter(e){
       headers: {
         "Content-type": "application/json; charset=UTF-8"
       }})
+
+// !!! post methodu hem de get edir menimsedildiyi variable dan goturnmek mnumkundur update etdikden sonraki datalari
+
   const postListResult = await postList.text();
   const getList = await fetch('http://localhost:5004/mylist');
   const getListResult = await getList.json();
@@ -47,6 +56,9 @@ return(
 const InnerList = (props)=>{
 
   async function handleDelete(e){
+// functionun parametrine id oturmek daha uygundur
+// bu zaman on click icerisinde arrow function nun icerisinde parametri oturmnek lazimdir
+
     const id = e.target.firstChild.innerText;
     const deleteList = await fetch(`http://localhost:5004/mylist/${id}` ,{
       method: 'DELETE',

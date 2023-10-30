@@ -1,6 +1,11 @@
 import React from "react";
 import data from "./data";
 
+// !!! tamamlanmayib
+/* You need to keep track of the current score:
+everytime the user clicks on a new card, he gets a point.
+if the user clicks twice on the same card, the score goes back to zero.
+display the best score of the user (ie. “Top Score”). */
 
 function Card(){
 

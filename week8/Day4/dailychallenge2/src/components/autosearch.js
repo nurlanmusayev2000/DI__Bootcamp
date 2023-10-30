@@ -2,6 +2,7 @@ import countries from "./countries";
 import React, {Component} from "react";
 
 
+// !!! component adi ile file adi eyni olsun 
 
 class AutoCompletedText extends Component{
 
@@ -26,6 +27,7 @@ class AutoCompletedText extends Component{
     });
 
 		let listStyle = document.querySelector(".listOfCountries").style;
+		// ! documentden istifade etmek tovsiyye olunmur reactda
 
 		if (e.target.value==="") {
 				listStyle.display = "none"
