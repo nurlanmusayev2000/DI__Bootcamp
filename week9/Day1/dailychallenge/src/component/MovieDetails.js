@@ -6,9 +6,9 @@ const DetailOfMovie = ()=>{
 	 result=	<p>{store.getState().movieDetail}</p>
 	}else{
 	result=(<>
-		<p>{store.getState().movieDetail.date}</p>
-		<p>{store.getState().movieDetail.rate}</p>
-		<p>{store.getState().movieDetail.title}</p>
+		<p>Title : {store.getState().movieDetail.title}</p>
+		<p>Release Date : {store.getState().movieDetail.date}</p>
+		<p>Rating :{store.getState().movieDetail.rate}</p>
 		</>)
 	}
 

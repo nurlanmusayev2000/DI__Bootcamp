@@ -27,3 +27,12 @@
 .listOfMovie {
     flex: 2;
 }
+
+.detail h1 {
+    margin-bottom: 30px;
+}
+
+.detail p {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
