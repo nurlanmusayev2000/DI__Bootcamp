@@ -1,6 +1,6 @@
 import data from "../data/data";
 import store from "../store/store";
-import detailAction from "../action/action";
+import {detailAction} from "../action/action";
 
 const MovieList=()=>{
 
@@ -12,14 +12,7 @@ const MovieList=()=>{
 					return item.title ===target;
 				});
 				store.dispatch(
-					{
-						type:"MOVIE_DETAIL",
-						payload:{
-							title:selectedMovie.title,
-							date:selectedMovie.releaseDate,
-							rate:selectedMovie.rating
-						}
-					}
+			    detailAction(selectedMovie.title,selectedMovie.releaseDate,selectedMovie.rating)
 				)
 				console.log(store.getState())
 
