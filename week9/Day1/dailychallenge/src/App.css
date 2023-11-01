@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.listOfMovie {
+    margin: 15px;
+    height: 90vh;
+}
+
+.movieItem {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.App {
+    display: flex;
+}
+
+.detail {
+    flex: 2;
+    text-align: center;
+}
+
+.listOfMovie {
+    flex: 2;
+}
+
+.detail h1 {
+    margin-bottom: 30px;
+}
+
+.detail p {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
