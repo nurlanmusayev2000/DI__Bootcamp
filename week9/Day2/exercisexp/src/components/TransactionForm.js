@@ -39,6 +39,9 @@ const mapDispatchToProps = (dispatch)=>{
 			e.preventDefault()
 			console.log(setInputAction);
 			dispatch(setInputAction("salam" , "sagol","necesen","yaxshi"));
+			// !!! data synamic sekilde formdan gelmelidi
+			// !! onclick zamani parametr qebul edib placeholder kimi dispatch icerisine yazilmalidir
+			// !! burada event parametr olmamalidi
 
 		}
 	}
@@ -50,6 +53,7 @@ const mapStateToProps=(state)=>{
 			name:state.name,
 			amount:state.amount
 		}
+		// !!! state leri gorutdukden sonra component e verib DOM da goster onu
 }
 
 
