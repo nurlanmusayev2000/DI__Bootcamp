@@ -19,10 +19,7 @@ constructor(props){
 				const form = new FormData(e.target);
 				const getForm = Object.fromEntries(form);
 				this.props.setEditedItem(id , getForm)
-				const inputs = [...document.getElementsByTagName('input')];
-				inputs.map((item)=>{
-					return item.value=""
-				})
+
 
 			}else{
 				const form = new FormData(e.target);
