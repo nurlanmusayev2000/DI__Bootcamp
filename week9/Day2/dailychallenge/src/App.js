@@ -9,21 +9,19 @@ class App extends Component{
 
   constructor(){
     super();
-    this.state={
-      robots:robots,
-    }
+
   }
 
 
-
   render(){
-    const {searchfield , onSearchChange} = this.props
-    const filteredRobots = this.state.robots.filter((robot)=>robot.name.toLowerCase().includes(searchfield.toLowerCase()))
+    console.log(this.props);
+    const {searchfield , onSearchChange , robots} = this.props
+
     return (
       <div className="App tc">
         <h1>RoboFriends</h1>
-        <SearchBox searchChange ={onSearchChange}/>
-        <CardList robots={filteredRobots}/>
+        <SearchBox />
+        <CardList />
 
       </div>
     );
@@ -31,13 +29,15 @@ class App extends Component{
 }
 
 const mapStateToProps = state=>{
+  console.log(state);
   return{
-    searchField: state.searchField
+    searchField: state.searchField,
+    robots: state.robots
   }
 }
 
 const mapDispatchToProps=(dispatch)=>{
-return  {onSearchChange: (event)=>(dispatch(setSearchField(event.target.value)))}
+  return {onSearchChange: (e)=>dispatch(setSearchField(e.target.value))}
 }
 
 export default connect(mapStateToProps , mapDispatchToProps)(App);
