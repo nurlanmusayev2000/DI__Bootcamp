@@ -9,7 +9,7 @@ const RobotsData = (data)=>({
 
 	type:"GET_DATA",
 	payload:{
-	roboData:data
+		roboData:data
 	},
 });
 
