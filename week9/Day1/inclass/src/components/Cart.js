@@ -2,29 +2,23 @@ import React, { Component } from "react";
 import "../App.css";
 import CartItem from "./Cartitem";
 import store from "../redux/store";
+import {connect} from "react-redux";
 class Cart extends Component {
-  state = {
-    cartGoods: []
-  }
+
   getTotal() {
-    const { cartGoods } = this.state;
+    const { cartGoods } = this.props;
     return cartGoods.reduce((acc, item) => acc + item.price, 0);
   }
 
-	componentDidMount(){
-		store.subscribe(()=>{
-			const globalState = store.getState();
-			this.setState({cartGoods:globalState.cart})
-		})
-	}
+
 
   render() {
     return (
       <div className="cart">
         <h2 className="cart__title" >Shopping Cart</h2>
-        { this.state.cartGoods.length ?
+        { this.props.cartGoods.length ?
           <ul className="cart__list">
-            {this.state.cartGoods.map((item) => (
+            {this.props.cartGoods.map((item) => (
               <li className="cart__list-item" key={item.id}>
                 <CartItem {...item} />
               </li>
@@ -40,4 +34,8 @@ class Cart extends Component {
   }
 }
 
-export default Cart;
+const mapStateToProps=(state)=>{
+  return {cartGoods:state.cart}
+}
+
+export default connect(mapStateToProps)(Cart)
