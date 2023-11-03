@@ -3,7 +3,7 @@ import Card from './Card'
 import { connect } from "react-redux";
 import { robotsApi, setSearchField } from "../redux/actions";
 import {store} from "../redux/store";
-store.dispatch(robotsApi())
+store.dispatch(robotsApi()) /* ? */
 
 
 const CardList =(props)=>{
