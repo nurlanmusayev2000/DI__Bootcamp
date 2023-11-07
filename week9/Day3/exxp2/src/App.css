@@ -1,0 +1,17 @@
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons button {
+    margin: 10px;
+    font-size: 1.5rem;
+}
+
+.container {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    text-align: center;
+}
