@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #eee;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.home .post img {
+    position: absolute;
+    top: 20px;
+    left: -100px;
+    opacity: 0.6;
+}
+
+.home .post {
+    overflow: hidden;
+    padding-left: 80px;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.blogLink {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+nav {
+    background-color: #972f32
+}
+
+.active {
+    border-bottom: 2px solid black;
+}
+
+.pending {
+    border: none;
+}
+
+h1,
+p {
+    text-align: center;
+}
+
+.card img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    bottom: -75px;
+    left: -75px;
+    opacity: 0.6;
+}
+
+.card {
+    overflow: hidden;
+    height: 200px;
+    width: 90%;
+    margin: 10px auto;
+}
+
+.card h1 {
+    font-size: 1.9rem;
+    color: coral;
+}
