@@ -1,0 +1,133 @@
+.App {
+    text-align: center;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 50px;
+    background-color: rgba(0, 0, 0, 0.758);
+    font-size: 2rem;
+    color: white;
+    align-items: center;
+}
+
+.icons div {
+    margin-top: -10px;
+    margin-right: 15px;
+    font-size: 4rem;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.imdbIcon {
+    color: yellow;
+}
+
+.reactIcon {
+    color: lightblue;
+}
+
+.footerContainer {
+    background-color: rgba(0, 0, 0, 0.597);
+    padding: 10px;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.form-container {
+    background-color: rgba(200, 195, 195, 0.713);
+    width: 80%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 3px 2px 3px 3px;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-container form :first-child {
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: none;
+    font-size: 1.3rem;
+}
+
+.form-container form :last-child {
+    width: 10%;
+    margin: 5px auto;
+}
+
+.form-container p {
+    font-size: 2rem;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.card-container img {
+    height: 300px;
+    width: 300px;
+}
+
+.card {
+    width: 300px;
+}
+
+.detailList {
+    list-style-type: none;
+}
+
+.detailList li {
+    border: 1px solid rgba(0, 0, 0, 0.226);
+    padding: 10px;
+    text-align: start;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.226);
+}
+
+.movieContainer {
+    display: flex;
+    width: 90%;
+    margin: auto;
+}
+
+.imgDiv {
+    flex: 1;
+    padding: 10px;
+}
+
+.imgDiv img {
+    height: 3 400px;
+}
+
+.tableDiv {
+    flex: 3;
+}
+
+.aboutMovie {
+    background-color: rgba(0, 0, 0, 0.618);
+    color: white;
+    text-align: start;
+    padding: 10px;
+    width: 90%;
+    margin: 5px auto;
+    border-radius: 5px;
+}
