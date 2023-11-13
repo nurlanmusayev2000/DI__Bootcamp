@@ -13,6 +13,7 @@ const reducer = (state = initialState, action) => {
         case "DELETE_POST":
 
             return {...state, chosenPost: "" }
+            // payload qebul edib meselen post idsi onun esasinda filter edib delete etmeli
         case "SHOW_POST":
             const chosenPost = state.posts.find((item) => item.id === action.payload)
             return {...state, chosenPost: chosenPost }

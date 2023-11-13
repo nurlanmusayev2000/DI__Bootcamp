@@ -11,6 +11,7 @@ function App() {
     <>
       <div className="App">
             <Navbar />
+            {/* !!! navlinklerin islemesi ucun routerin icinde olmali */}
             <Routes path="/">
               <Route  path="/" element={<Landing/>} />
               <Route  path="/movie/:index" element={<Movie/>} />

@@ -1,3 +1,7 @@
+// !!! reduc componentleein jsx file extensionunda yazilmasina ehtiyac yoxdur
+
+
+
 const searchImg = (data) => {
     return {
         type: "GET_SEARCHED_IMAGE",

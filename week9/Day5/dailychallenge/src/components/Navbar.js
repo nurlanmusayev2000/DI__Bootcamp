@@ -16,6 +16,7 @@ class Navbar extends Component{
 					<div className="reactIcon"><FaReact/></div>
 				</div>
 			</div>
+			// ! uygun page linkler de elave olunsun
 		)
 	}
 }

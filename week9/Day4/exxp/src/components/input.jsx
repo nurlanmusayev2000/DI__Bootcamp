@@ -36,6 +36,9 @@ class SearchInput extends Component{
 	}
 }
 
+//! reducere actiona category den asili olaraq bir parametr oturub daha sonra o parameter esasinda datalari fetch etmek daha uygun olar
+// ! thunk middlleware den istifade etmekle
+
 const mapDispatchToProps =(dispatch)=>{
 	return {
 		mountainImgGet : ()=>{dispatch(mountainImgGet())},
