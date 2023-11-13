@@ -1,10 +1,6 @@
-const initialState = {
-	searchField:"",
-	robots:[],
-	searchingRobots:[]
-};
 
-	export const searchRobots=(state=initialState , action)=>{
+
+	export const searchRobots=(state , action)=>{
 		switch (action.type) {
 			case "GET_DATA":
 				console.log("inside getdata");

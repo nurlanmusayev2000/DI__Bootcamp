@@ -1,16 +1,24 @@
 import axios from 'axios';
 
 const setSearchField = (text) => ({
-  type: 'CHANGE_SEARCH_FIELD',
-  payload: text,
+	type: "CHANGE_SEARCH_FIELD",
+	payload: text
+})
+
+const RobotsData = (data)=>({
+
+	type:"GET_DATA",
+	payload:{
+		roboData:data
+	},
 });
 
-const RobotsData = (data) => ({
-  type: 'GET_DATA',
-  payload: {
-    roboData: data,
-  },
-});
+// const RobotsData = (data) => ({
+//   type: 'GET_DATA',
+//   payload: {
+//     roboData: data,
+//   },
+// });
 
 const robotsApi = () => {
 
