@@ -34,18 +34,18 @@ const data = [{
 ]
 
 app.get('/posts', (req, res) => {
-        res.json(data)
-    })
-    /*
-    app.get('/posts/:id', (req, res) => {
-        let id = Number(req.params.id);
-        let post = data.find((val) => val.id == id);
-        if (!post) {
-            return res.status(404).send('data not found')
-        }
-        res.json(post)
+    res.json(data)
+})
 
-    }) */
+app.get('/posts/:id', (req, res) => {
+    let id = Number(req.params.id);
+    let post = data.find((val) => val.id == id);
+    if (!post) {
+        return res.status(404).send('data not found')
+    }
+    res.json(post)
+
+})
 
 /* app.use(express.json());
 app.post('/posts', (req, res) => {
@@ -76,11 +76,14 @@ app.post("/products", (req, res) => {
 
 
 
-/* app.put('/posts/:id', (req, res) => {
+app.put('/posts/:id', (req, res) => {
     const id = Number(req.params.id);
+    console.log(id);
     const index = data.findIndex((val) => {
-        val.id == id
+        console.log(val.id);
+        return val.id == id
     })
+    console.log(index);
     if (index == -1) {
         return res.status(404).send("Product not found");
     }
@@ -91,4 +94,14 @@ app.post("/products", (req, res) => {
     }
     data[index] = updatePost;
     res.json(updatePost)
-}) */
+})
+
+app.delete('/posts/:id', (req, res) => {
+    const id = Number(req.params.id);
+    const index = data.findIndex((val) => {
+        return val.id == id
+    })
+    const newData = data.splice(index, 1)
+    res.json(newData)
+
+})

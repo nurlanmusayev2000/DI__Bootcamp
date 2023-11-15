@@ -28,7 +28,7 @@ const SearchBox = (props)=>{
 const mapStateToProps = state=>{
   console.log(state);
   return{
-    searchField: state.searchField,
+		 searchField: state.searchField,
 		searchingRobots:state.searchingRobots
   }
 }
