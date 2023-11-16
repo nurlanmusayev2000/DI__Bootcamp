@@ -14,11 +14,13 @@ const authMiddleware = (req, res, next) => {
             return err.message
         }
 
-        const newToken = jwt.sign({ id: user.id, username: user.username }, secretkey, {
-            expiresIn: '1h', // New access token expires in 1 hour
-        });
+        // const newToken = jwt.sign({ id: user.id, username: user.username }, secretkey, {
+        //     expiresIn: '1h', // New access token expires in 1 hour
+        // });
 
-        res.cookie('token', newToken, { httpOnly: true });
+        // !!! verify olunduqda yeni token yaranmir movcud olan tokeni yoxlayiriq
+
+        // res.cookie('token', newToken, { httpOnly: true });
         req.user = user;
         next();
     })
