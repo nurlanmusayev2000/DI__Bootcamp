@@ -11,9 +11,7 @@ const reducer = (state = initialState, action) => {
         case "STARTING_TO_FETCH":
             console.log("Fetching has already started");
             return state
-        case "FAILURE":
 
-            return ("something went wrong")
 
         case "SEARCH_MOVIE":
 

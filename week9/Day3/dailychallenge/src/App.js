@@ -1,15 +1,11 @@
 import {Component} from 'react';
 import './App.css';
 import SearchBox from './components/SearchBox';
-import { robotsApi } from './redux/actions';
 import { connect } from 'react-redux';
 import CardList from './components/CardList';
 class App extends Component{
 
-  constructor(){
-    super();
 
-  }
 
 
   render(){
@@ -20,7 +16,6 @@ class App extends Component{
         <h1>RoboFriends</h1>
         <SearchBox />
         <CardList />
-
       </div>
     );
   }

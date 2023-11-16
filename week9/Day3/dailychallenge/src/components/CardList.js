@@ -1,8 +1,7 @@
 import React from "react";
 import Card from './Card'
 import { connect } from "react-redux";
-import { robotsApi, setSearchField } from "../redux/actions";
-import {store} from "../redux/store";
+import { robotsApi } from "../redux/actions";
 
 
 class CardList extends React.Component{
