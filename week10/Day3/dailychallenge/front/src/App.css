@@ -1,0 +1,37 @@
+.App {
+    text-align: center;
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: end;
+}
+
+nav ul li {
+    margin: 15px;
+    list-style-type: none;
+}
+
+.register-card,
+.sign-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    margin: auto;
+    height: 55vh;
+    box-shadow: 1px 3px 3px 5px rgba(0, 0, 0, 0.279);
+}
+
+.registerForm,
+.signForm input {
+    font-size: 1.2rem;
+    margin-top: 8px;
+    padding: 2px 5px;
+}
+
+.register-card,
+.sign-card h3 {
+    margin-top: 2px;
+}

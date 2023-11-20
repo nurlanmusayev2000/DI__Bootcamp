@@ -59,7 +59,7 @@ const fetchAutoSearch = (data) => {
 
     return (dispatch, getState) => {
 
-        axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${data}&limit=5&appid=f610391dda27e40c812af263660c0fa5`).then(res => {
+        axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${data}&limit=5&appid=f610391dda27e40c812af263660c0fa5`).then(res => {
             console.log("autoComp");
             console.log(res);
             dispatch(autoComplete(res.data[0]))

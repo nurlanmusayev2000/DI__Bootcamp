@@ -1,11 +1,13 @@
 .App {
     text-align: center;
+    background-image: url("https://cdn.hswstatic.com/gif/why-is-sky-blue.jpg");
+    height: 100vh;
 }
 
 .nav {
     display: flex;
     justify-content: space-between;
-    background-color: rgba(128, 128, 128, 0.414);
+    background-color: rgba(128, 128, 128, 0.855);
     align-items: center;
     padding: 3px 10px;
 }

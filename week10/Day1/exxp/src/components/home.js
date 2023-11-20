@@ -5,9 +5,12 @@ import {addFav, loading} from "../redux/actions";
 
 const Home = (props) => {
 
-	const addfavorites=()=>{
+	const addfavorites=(e)=>{
 		props.addFavorites(props.autoComplete.name,props.currentWeather.main.temp,props.currentWeather.weather[0].description);
 		console.log(props);
+		console.log("favs",e.target.parentElement.firstElementChild.firstElementChild);
+		const icon = e.target.parentElement.firstElementChild.firstElementChild;
+		icon.style.backgroundColor='red'
 	}
 	console.log(props.loading);
 if (props.Day5Forecast.length!==0 && props.currentWeather.length!==0 && props.autoComplete.length!==0) {
