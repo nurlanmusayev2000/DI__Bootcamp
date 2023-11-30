@@ -1,0 +1,154 @@
+.App {
+    text-align: center;
+}
+
+
+/* design for navigation bar */
+
+.navBar {
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+}
+
+.nav_container {
+    width: 90%;
+    display: flex;
+    padding: 0 30px;
+    align-items: center;
+}
+
+.main_page_link {
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+    margin-right: 15px;
+    flex: .7;
+    font-weight: bold;
+    color: white;
+}
+
+.nav_category {
+    flex: .8;
+}
+
+.search_form {
+    display: flex;
+    flex: 4;
+    background-color: white;
+    margin: 4px;
+    border-radius: 10px;
+}
+
+.search_form input {
+    border: 0;
+    flex: 4;
+    border-radius: 10px;
+}
+
+input:focus {
+    outline-width: 0;
+    outline: none;
+    border: 1px solid #FFF;
+}
+
+.search_form .dropdown {
+    flex: 1;
+}
+
+.search_form button {
+    flex: 0.9;
+    margin: 1px;
+    border-radius: 10px;
+}
+
+.nav_button {
+    flex: .5;
+    margin: 2px;
+    padding: 0;
+    font-size: .9rem;
+}
+
+.dropdown-menu {
+    height: 300px;
+    overflow: scroll;
+}
+
+.profiIcon {
+    font-size: 2rem;
+}
+
+
+/* mainpage cards configre */
+
+.card_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    background-color: #9999995f;
+    padding: 10px 3px;
+}
+
+.card {
+    width: 18rem;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0;
+}
+
+.img-card img {
+    width: 100%;
+}
+
+.card:hover {
+    padding: 2px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.user-products {
+    box-shadow: 2px 2px 2px 2px;
+}
+
+
+/*  design for chosen product */
+
+#carouselExample {
+    width: 100%;
+}
+
+#carouselExample img {
+    width: 100%;
+    height: 500px;
+}
+
+.product {
+    width: 80%;
+    margin: auto;
+}
+
+.product ul {
+    list-style-type: none;
+    padding: 15px;
+}
+
+.descript {
+    font-size: 1.3rem;
+    text-align: start;
+    margin-bottom: 1.5rem;
+}
+
+.product .subTitle {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact {
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,20 @@
+.add-container {
+    margin: 10px;
+}
+
+.productDetails {
+    background-color: grey;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+}
+
+.productDetails label,
+select,
+input {
+    margin: 8px 8px 5px 5px;
+}
+
+.productDetails textarea {
+    margin-left: 25px;
+}

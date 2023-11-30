@@ -1,0 +1,15 @@
+.profile {
+    display: flex;
+    margin: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.user-details {
+    padding: 1rem;
+}
+
+.user-details:hover {
+    padding: 1rem;
+}
