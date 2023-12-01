@@ -1,6 +1,6 @@
 import {connect} from "react-redux"
 import card from "./subComponents/productCard";
-import {deleteProduct, fetchChosenProduct, fetchProfile} from "../redux/action";
+import {deleteProduct, fetchChosenProduct, fetchProfile, sendId} from "../redux/action";
 import '../profile.css'
 import {Link} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -8,39 +8,47 @@ import { useNavigate } from "react-router-dom";
 
 const Profile=(props)=>{
 	const navigate=useNavigate()
-console.log(props);
+
+// logout button when clciked delete token
 	const logoutHandler=()=>{
 		localStorage.clear();
-		navigate('/Ecommerce/logIn');
+		navigate('/');
 		window.location.reload()
 	}
-
+// open new page for chosen product when clicked product
 	const handleChosenProduct = (e) => {
-		console.log("inside click");
-		const productId = e.target.parentElement.parentElement.firstChild.innerText;
-		console.log('clickedproduct',productId);
-		fetchChosenProduct(productId);
-
-
+		const productId = e.target.parentElement.parentElement.dataset.id;
+		props.fetchChosenProduct(productId);
 }
 
-
+//delete user's product
 const deleteHandler=(e)=>{
-	console.log(e.target.parentElement.firstChild.innerText);
-	const id=e.target.parentElement.firstChild.innerText;
+	const id=e.target.parentElement.dataset.buttonid;
 	props.fetchDelete(id);
 }
 
+//update user's product
+const updateHandler=(e)=>{
+	console.log(e.target.parentElement.dataset.buttonid);
+	const id=e.target.parentElement.dataset.buttonid;
+	props.sendId(id)
+	navigate('/Ecommerce/product/update')
+
+}
+//it create cards from userProducts (in redux state)
 const prodCard = props.products?.map((products) => {
 	return (
 		<div>
-			{card('/category/product',products,handleChosenProduct,props.isLoggedIn,null,deleteHandler)}
+			{card(products.product_id,'/category/product',products,handleChosenProduct,props.isLoggedIn,updateHandler,deleteHandler)}
 		</div>
 	)
 });
+
+
+//if user has logged in in this situation creating user card and add user's products cards (prdCard )to the user page
 	if (props.isLoggedIn) {
 		return(
-			<div className="profile">
+			<div  className="profile">
 				<div className="profile-container ">
 					<h1>User Details</h1>
 					<div className="user-details card ">
@@ -55,7 +63,9 @@ const prodCard = props.products?.map((products) => {
 				{prodCard}
 			</div>
 		)
-	}else{
+	}
+	//if user is not logged in he navigated to log in page
+	else{
 		navigate('/Ecommerce/logIn')
 
 	}
@@ -75,6 +85,7 @@ const mapDispatchToProps=(dispatch)=>{
 			fetchChosenProduct:(data)=>dispatch(fetchChosenProduct(data)),
 			fetchDelete:(data)=>dispatch(deleteProduct(data)),
 			fetchProfile:()=>dispatch(fetchProfile()),
+			sendId:(data)=>dispatch(sendId(data))
 
 }
 }

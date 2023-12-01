@@ -3,26 +3,24 @@ import card from "./subComponents/productCard";
 import {fetchChosenProduct} from "../redux/action";
 
 
-function searchResult(props){
+function searchResult({products,fetchChosenProduct}){
+//click button enter card for more details
+	const handleChosenProduct = (e) => {
+		const productId = e.target.parentElement.firstChild.innerText;
+		fetchChosenProduct(productId);
+	}
+//create cards for products for search result
+	const productDetails=products.data;
+	const prodCard = productDetails?.length ? productDetails.map(product =>
+		 card(product.product_id,'/category/product',product,handleChosenProduct)
+	) : (<h1>product was not found for this search result</h1>)
 
-	console.log('in searchResult',props);
-
-		const handleChosenProduct = (e) => {
-			console.log("inside click");
-			const productId = e.target.parentElement.firstChild.innerText;
-			props.fetchChosenProduct(productId);
-		}
-
-		const prodCard = props.products.data?.map((product) => {
-			return card('/category/product',product,handleChosenProduct)
-		});
-		console.log(props.products?.data);
 	return(
 		<div className="card_container">{prodCard}</div>
 	)
 }
-const mapStateToProps=(state)=>{
 
+const mapStateToProps=(state)=>{
 	return{
 		products:state.searchProducts
 	}
@@ -30,8 +28,7 @@ const mapStateToProps=(state)=>{
 const mapDispatchToProps=(dispatch)=>{
 	return{
 			fetchChosenProduct:(data)=>dispatch(fetchChosenProduct(data))
-
-}
+	}
 }
 
 

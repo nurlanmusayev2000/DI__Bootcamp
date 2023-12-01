@@ -2,15 +2,16 @@ import {  Link, NavLink, useNavigate } from "react-router-dom";
 import {BiSolidCategory} from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
 import {connect} from "react-redux";
-import {chooseProductforCategory, fetchLogIn, fetchProfile} from "../redux/action";
+import {fetchProductsForCategory, fetchLogIn, fetchProfile} from "../redux/action";
 import SearchBox from "./subComponents/searchBox";
+import {useEffect} from "react";
 
 
-const NavBar=(props)=>{
-	console.log(props.isLoggedIn);
+const NavBar=({isLoggedIn,fetchLogIn,fetchProfile,products,fetchProductsForCategory,productByCat})=>{
 	const navigate=useNavigate()
+	//this is for 'new announcement (green button) it works when you logged in
 	const addNewProduct=()=>{
-		if (props.isLoggedIn) {
+		if (isLoggedIn) {
 			navigate('/ecommerce/product/new')
 		}
 		else(
@@ -18,34 +19,36 @@ const NavBar=(props)=>{
 		)
 	}
 
-
-	if (props.isLoggedIn) {
+ useEffect(()=>{
+	//if you ogged in you dont need to see log in or sign up button again
+	if (isLoggedIn) {
 		const loginClass=document.querySelector('.login-button').classList;
 		loginClass.add('d-none');
 		const signupClass=document.querySelector('.signup-button').classList;
 		signupClass.add('d-none')
+	}
+ },[isLoggedIn])
 
-	}
-	console.log('navbar',localStorage.getItem('username'));
-	console.log(props);
-	if (localStorage.getItem('username')!==null) {
-		const username=localStorage.getItem('username')
-		fetchLogIn(username)
-	}
+	//if (localStorage.getItem('username')!==null) {
+	//	const username=localStorage.getItem('username')
+	//	fetchLogIn(username)
+	//}
+
+	//when clicked login icon in navbar(at the end) it will direct to profile(log in or not process is written in Profile.js)
 	const acceshandle=()=>{
-		props.fetchProfile()
+		fetchProfile()
 	}
+
+//it is for category button when clicked categoryin dropdown in nacbar it will get product for specific category
 	const handleCategory=(e)=>{
-		const category= props.products.categories.find(category => category.categoryname===e.target.innerText);
-		const chosenProducts= props.products.products.filter(product=>product.product_category===category.id);
-		props.getProductByCat(chosenProducts);
-
+		console.log(e.target.dataset.id);
+		const categoryId=e.target.dataset.id;
+		fetchProductsForCategory(categoryId);
 	}
 
-
-
-	const categories=props.products.categories?.map(item=>{
-		return(<Link to={item.categoryname} onClick={handleCategory} key={item.id} className="dropdown-item" type="button">{item.categoryname}</Link>)
+// taking all categories for drowdon (when clicked category dropdown you will see all categories)
+	const categories=products.categories?.map(item=>{
+		return(<Link data-id={item.id} to={item.categoryname} onClick={handleCategory} key={item.id} className="dropdown-item" type="button">{item.categoryname}</Link>)
 	})
 
 	return(
@@ -78,7 +81,7 @@ const NavBar=(props)=>{
 
 const mapDispatchToProducts=(dispatch)=>{
 	return{
-		getProductByCat:(data)=>dispatch(chooseProductforCategory(data)),
+		fetchProductsForCategory:(data)=>dispatch(fetchProductsForCategory(data)),
 		fetchProfile:()=>dispatch(fetchProfile()),
 		fetchLogIn:(data)=>dispatch(fetchLogIn(data))
 
@@ -91,8 +94,7 @@ const mapStateToProps=(state)=>{
 		param:state.params,
 		isLoggedIn:state.isLoggedIn,
 		user:state.usersData,
-		formdata:state.formData
-
+		formdata:state.formData,
 	}
 }
 

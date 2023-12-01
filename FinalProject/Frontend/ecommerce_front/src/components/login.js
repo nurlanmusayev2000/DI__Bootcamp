@@ -4,25 +4,22 @@ import { useNavigate } from "react-router-dom"
 import {fetchLogIn} from "../redux/action"
 
 
-const Login=(props)=>{
+const Login=({fetchLogIn,isLoggedIn})=>{
 	const navigate=useNavigate()
-
-
+// form submit button take username and password from form
 	const formDataHandler=(e)=>{
 		e.preventDefault()
 		const form=document.forms.signUpForm;
 		const formData=new FormData(form)
 		const objectOfFormValue=Object.fromEntries(formData)
-		console.log(objectOfFormValue);
-		props.fetchLogIn(objectOfFormValue);
+// check log in
+		fetchLogIn(objectOfFormValue);
+//form inputs clear
 		for(let data of form){
 			data.value=""
 		}
-		localStorage.setItem("username",objectOfFormValue.username)
-		console.log('logincomponentfetched',props);
 
 		navigate('/Ecommerce/profile')
-
 	}
 
 

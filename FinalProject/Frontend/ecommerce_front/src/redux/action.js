@@ -14,7 +14,7 @@ const getallProduct = (data) => {
 }
 
 
-const chooseProductforCategory = (data) => {
+const chooseProductsforCategory = (data) => {
     return {
         type: "GET_PRODUCT_BY_CATEGORY",
         payload: data
@@ -85,12 +85,7 @@ const deniedProfile = (data) => {
     }
 }
 
-const sentToStateOjectValue = (data) => {
-    return {
-        type: "SENT_TO_STATE", //when logged in sent to state login form values
-        payload: data
-    }
-}
+
 
 const deleteChosenProduct = () => {
     return {
@@ -98,27 +93,38 @@ const deleteChosenProduct = () => {
     }
 }
 
+const sendId = (data) => {
+
+    return {
+        type: "SEND_ID_TO_ANOTHER_COMPONENT",
+        payload: data
+    }
+}
+
 
 ///MIDDLEWARES
 
 const fetchAllProducts = () => {
-    const token = localStorage.getItem('token');
-
 
     return dispatch => {
         dispatch(startFetch());
 
-        axios.get('http://localhost:3005/', {
-
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            }
-        }).then(res => {
+        axios.get('http://localhost:3005/').then(res => {
             console.log(res.data);
             dispatch(getallProduct(res.data))
         }).catch(err => console.log('error happened in fetchall product:', err))
 
+    }
+}
+
+const fetchProductsForCategory = (data) => {
+
+
+
+    return dispatch => {
+        axios.get(`http://localhost:3005/products/category/${data}`).then(res => {
+            dispatch(chooseProductsforCategory(res.data))
+        })
     }
 }
 
@@ -169,7 +175,6 @@ const fetchSignUp = (data) => {
 }
 
 const fetchLogIn = (data) => {
-    console.log("actiondata:", data);
 
     return (dispatch) => {
         axios.post('http://localhost:3005/ecommerce/login', {
@@ -177,12 +182,10 @@ const fetchLogIn = (data) => {
             data,
             headers: {
                 'Content-Type': 'application/json',
-            },
+            }
         }).then(res => {
             console.log('loginftchedsuccess data', res);
-            localStorage.setItem('token', res.data.token)
-            localStorage.setItem('refreshtoken', res.data.refreshToken)
-            dispatch(sentToStateOjectValue(data))
+            localStorage.setItem('token', res.data.token);
             dispatch(logIn(res.data.message, res.data.user, true, res.data.productsOfUser))
         }).catch(err => {
             dispatch(logIn('invalid Credential', false))
@@ -229,4 +232,4 @@ const deleteProduct = (data) => {
         }).catch(err => console.log(err)))
 }
 
-export { fetchAllProducts, chooseProductforCategory, chooseProductForCity, fetchChosenProduct, getPath, fetchSearchProduct, getSearchProducts, fetchSignUp, fetchLogIn, fetchProfile, postNewProduct, deleteProduct }
+export { fetchAllProducts, fetchProductsForCategory, chooseProductForCity, fetchChosenProduct, getPath, fetchSearchProduct, getSearchProducts, fetchSignUp, fetchLogIn, fetchProfile, postNewProduct, deleteProduct, sendId }

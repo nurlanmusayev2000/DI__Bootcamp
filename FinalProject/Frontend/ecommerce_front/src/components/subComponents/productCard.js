@@ -1,28 +1,21 @@
 import {Link} from "react-router-dom";
 
-const card=(path,products,clickHandler,loginCheck,updateHandler,deleteHandler)=>{
-
-
-console.log('insideCard' ,products);
-
+const card=(key,path,products,clickHandler,loginCheck,updateHandler,deleteHandler)=>{
 	let date = products.product_date;
   let dateObj = new Date(date);
   const formattedDate = dateObj.toLocaleString();
   let crud;
   if (loginCheck) {
-    crud=  <div className="crud-buttons ">
-              <span className="d-none">{products.product_id}</span>
+    console.log('logincheck');
+    crud=  <div data-buttonid={products.product_id} className="crud-buttons ">
               <button  onClick={updateHandler} className="btn btn-warning btn-sm">Update</button>
               <button onClick={deleteHandler} className="btn btn-danger btn-sm mx-2">Delete</button>
             </div>
   }
-
-console.log(products);
   return (
-  <div key={products.product_id} className="user-products">
+  <div key={key} className="user-products">
     {crud}
-    <Link to={path} data-id={products.id} onClick={clickHandler} className="card" key={products.id} >
-        <span className="d-none">{products.product_id}</span>
+    <Link to={path} data-id={products.product_id} onClick={clickHandler} className="card" key={products.id} >
         <div className="img-card">
           <img src={products.img1} alt="" />
         </div>
@@ -37,8 +30,6 @@ console.log(products);
         </div>
       </Link>
     </div>
-
-
   );
 }
 

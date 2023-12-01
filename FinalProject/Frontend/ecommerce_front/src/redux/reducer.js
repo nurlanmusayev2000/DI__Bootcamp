@@ -10,7 +10,7 @@ const initialState = {
     usersData: {},
     ProductOfUser: [],
     usersDetail: [],
-    formData: []
+    productId: ''
 }
 
 const reducer = (state = initialState, action) => {
@@ -31,17 +31,16 @@ const reducer = (state = initialState, action) => {
             return {...state, searchProducts: action.payload }
         case "USER_SIGNED_UP":
             return {...state, logInMessage: action.payload }
-        case "SENT_TO_STATE":
-            return {...state, formData: action.payload }
-        case "USER_LOGGED_IN":
-            console.log('loginreeducer', action.payload, state);
-            return {...state, isLoggedIn: action.payload.isloggedIn, logInMessage: action.payload.message, usersData: action.payload.user, ProductOfUser: action.payload.products }
 
+        case "USER_LOGGED_IN":
+            return {...state, isLoggedIn: action.payload.isloggedIn, logInMessage: action.payload.message, usersData: action.payload.user, ProductOfUser: action.payload.products }
         case "LOGIN_ACTIVE":
             console.log('reducer when clicked profile get succes', action.payload);
             return {...state, isLoggedIn: true, usersData: action.payload.usersdata, ProductOfUser: action.payload.productOfUser }
         case "LOGIN_NOT_ACTIVE":
-            return {...state, logInMessage: action.payload, usersData: [], ProductOfUser: [], isloggedIn: false }
+            return {...state, logInMessage: action.payload, usersData: [], ProductOfUser: [], isloggedIn: false };
+        case "SEND_ID_TO_ANOTHER_COMPONENT":
+            return {...state, productId: action.payload }
         default:
             return state;
     }

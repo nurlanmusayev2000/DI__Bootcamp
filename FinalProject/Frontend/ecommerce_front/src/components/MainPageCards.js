@@ -5,22 +5,22 @@ import {useEffect} from "react";
 
 const MainPageCards=({ fetchAllProduct ,fetchChosenProduct,products})=>{
 
+	//it get all products for mainpage from db
 	useEffect(() => {
     fetchAllProduct();
   }, [fetchAllProduct])
 
-
-console.log('mainpageFerched',products);
+// open new page for chosen product when clicked product
 	const handleChosenProduct = (e) => {
-		console.log("inside click");
-		const productId = e.target.parentElement.parentElement.firstChild.innerText;
-		console.log('clickedproduct',productId);
+		const productId = e.target.parentElement.parentElement.dataset.id;
 		fetchChosenProduct(productId);
 
 }
 console.log(products);
+
+//create cards for products
 const prodCard = products.products?.map((products) => {
-	return   card ( '/category/product',products,handleChosenProduct)
+	return   card (products.product_id, '/category/product',products,handleChosenProduct)
 });
 
 

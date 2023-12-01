@@ -95,6 +95,7 @@ input:focus {
     cursor: pointer;
     text-decoration: none;
     padding: 0;
+    height: 100%;
 }
 
 .img-card img {

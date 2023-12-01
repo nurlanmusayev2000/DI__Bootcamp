@@ -5,31 +5,36 @@ import {fetchChosenProduct, getPath} from "../redux/action";
 
 const ProductByCatg=(props)=>{
 
+	const params=useParams();
+	props.getParams(params)
+
+//enter the product card for more details
 	const handleChosenProduct = (e) => {
-		console.log("inside click");
 		const productId = e.target.parentElement.firstChild.innerText;
 		props.fetchChosenProduct(productId);
 	}
-	const params=useParams();
-	props.getParams(params)
-	console.log('afterparams',props);
-	const card=props.products?.map(products=>{
+
+
+	const cardList = props.products.products;
+	const card=cardList?.length ? (cardList.map(product=>{
 		return(
-			<Link to='/category/product' data-id={products.id} onClick={handleChosenProduct} className="card" key={products.id} >
-				<span className="d-none">{products.product_id}</span>
-				<img src={products.img1}  alt=""/>
+			<Link to='/category/product' data-id={product.id} onClick={handleChosenProduct} className="card" key={product.id} >
+				<span className="d-none">{product.product_id}</span>
+				<img src={product.img1}  alt=""/>
 				<div className="card-body">
-					<h3 className="card-title">{products.price} Azn</h3>
-					<h5 className="card-title">{products.product_name}</h5>
-					<p className="card-text">{products.product_description}</p>
+					<h3 className="card-title">{product.price} Azn</h3>
+					<h5 className="card-title">{product.product_name}</h5>
+					<p className="card-text">{product.product_description}</p>
 				</div>
 				<div className="card-footer">
-					<p>{ Date(products.product_date)}</p>
-					<p>{products.city}</p>
+					<p>{ Date(product.product_date)}</p>
+					<p>{product.city}</p>
 				</div>
 			</Link>
 		)
-	})
+	})) :(
+		<h1>There is no product for this category</h1>
+	)
 
 	return(
 

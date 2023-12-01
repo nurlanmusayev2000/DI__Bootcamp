@@ -13,6 +13,7 @@ import SignIn from "./components/SignIn";
 import Login from "./components/login";
 import Profile from "./components/Profile";
 import AddProduct from "./components/AddProduct";
+import UpdateProduct from "./components/UpdateProduct";
 
 
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/Ecommerce/logIn" element={<Login/>}/>
         <Route path="/Ecommerce/profile" element={<Profile/>}/>
         <Route path="/ecommerce/product/new" element={<AddProduct/>} />
+        <Route path="/Ecommerce/product/update" element={<UpdateProduct/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>
