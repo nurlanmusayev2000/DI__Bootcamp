@@ -10,7 +10,9 @@ const initialState = {
     usersData: {},
     ProductOfUser: [],
     usersDetail: [],
-    productId: ''
+    productId: '',
+    hasError: false,
+    error: ''
 }
 
 const reducer = (state = initialState, action) => {
@@ -31,7 +33,6 @@ const reducer = (state = initialState, action) => {
             return {...state, searchProducts: action.payload }
         case "USER_SIGNED_UP":
             return {...state, logInMessage: action.payload }
-
         case "USER_LOGGED_IN":
             return {...state, isLoggedIn: action.payload.isloggedIn, logInMessage: action.payload.message, usersData: action.payload.user, ProductOfUser: action.payload.products }
         case "LOGIN_ACTIVE":
@@ -41,6 +42,8 @@ const reducer = (state = initialState, action) => {
             return {...state, logInMessage: action.payload, usersData: [], ProductOfUser: [], isloggedIn: false };
         case "SEND_ID_TO_ANOTHER_COMPONENT":
             return {...state, productId: action.payload }
+        case "CATCH_ERROR":
+            return {...state, hasError: true, error: action.payload }
         default:
             return state;
     }

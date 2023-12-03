@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const Profile=(props)=>{
 	const navigate=useNavigate()
+	console.log(typeof(props.user[0]));
 
 // logout button when clciked delete token
 	const logoutHandler=()=>{
@@ -46,7 +47,7 @@ const prodCard = props.products?.map((products) => {
 
 
 //if user has logged in in this situation creating user card and add user's products cards (prdCard )to the user page
-	if (props.isLoggedIn) {
+	if (localStorage.token!==undefined && props.user[0]!==undefined && props.isLoggedIn) {
 		return(
 			<div  className="profile">
 				<div className="profile-container ">
@@ -63,6 +64,8 @@ const prodCard = props.products?.map((products) => {
 				{prodCard}
 			</div>
 		)
+	}else if(localStorage.token!==undefined && props.user[0]===undefined){
+		props.fetchProfile()
 	}
 	//if user is not logged in he navigated to log in page
 	else{

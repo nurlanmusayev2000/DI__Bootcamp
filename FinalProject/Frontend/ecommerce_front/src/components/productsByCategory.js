@@ -1,12 +1,11 @@
 import {connect} from "react-redux"
-import {Link, useParams} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {fetchChosenProduct, getPath} from "../redux/action";
 
 
 const ProductByCatg=(props)=>{
 
-	const params=useParams();
-	props.getParams(params)
+
 
 //enter the product card for more details
 	const handleChosenProduct = (e) => {

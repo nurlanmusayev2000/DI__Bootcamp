@@ -1,9 +1,10 @@
 import {connect} from "react-redux"
+import {useParams} from "react-router-dom"
 
 
 const productByCity=(props)=>{
 
-	console.log(props.products);
+
 
 	const card=props.products?.map(products=>{
 		return(

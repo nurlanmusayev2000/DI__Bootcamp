@@ -7,8 +7,16 @@ import SearchBox from "./subComponents/searchBox";
 import {useEffect} from "react";
 
 
-const NavBar=({isLoggedIn,fetchLogIn,fetchProfile,products,fetchProductsForCategory,productByCat})=>{
+const NavBar=({param,isLoggedIn,fetchLogIn,fetchProfile,products,fetchProductsForCategory,productByCat})=>{
 	const navigate=useNavigate()
+
+		useEffect(()=>{
+			if (localStorage.token!==undefined) {
+				fetchProfile()
+			}
+
+		},[fetchProfile])
+
 	//this is for 'new announcement (green button) it works when you logged in
 	const addNewProduct=()=>{
 		if (isLoggedIn) {
@@ -48,7 +56,7 @@ const NavBar=({isLoggedIn,fetchLogIn,fetchProfile,products,fetchProductsForCateg
 
 // taking all categories for drowdon (when clicked category dropdown you will see all categories)
 	const categories=products.categories?.map(item=>{
-		return(<Link data-id={item.id} to={item.categoryname} onClick={handleCategory} key={item.id} className="dropdown-item" type="button">{item.categoryname}</Link>)
+		return(<Link data-id={item.id} to='/category' onClick={handleCategory} key={item.id} className="dropdown-item" type="button">{item.categoryname}</Link>)
 	})
 
 	return(

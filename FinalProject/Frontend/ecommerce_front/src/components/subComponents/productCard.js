@@ -1,9 +1,10 @@
 import {Link} from "react-router-dom";
-
+// create card for one product
 const card=(key,path,products,clickHandler,loginCheck,updateHandler,deleteHandler)=>{
 	let date = products.product_date;
   let dateObj = new Date(date);
   const formattedDate = dateObj.toLocaleString();
+  //if user is logged in he can delete or update his own product
   let crud;
   if (loginCheck) {
     console.log('logincheck');
@@ -12,6 +13,7 @@ const card=(key,path,products,clickHandler,loginCheck,updateHandler,deleteHandle
               <button onClick={deleteHandler} className="btn btn-danger btn-sm mx-2">Delete</button>
             </div>
   }
+  //CARD HTML
   return (
   <div key={key} className="user-products">
     {crud}

@@ -28,7 +28,7 @@ const UpdateProduct=({id,usersProducts,category})=>{
 		const form=document.forms.updateForm;
 		const formdata=new FormData(form);
 		const formValues=Object.fromEntries(formdata);
-		axios.put(`http://localhost:3005/product/update/${id}`,formValues).then(res=>{
+		axios.put(`http://localhost:3005/api/product/update/${id}`,formValues).then(res=>{
 			console.log(res);
 		})
 // type = file input values
@@ -40,7 +40,7 @@ const UpdateProduct=({id,usersProducts,category})=>{
       for (let i = 0; i < files.length; i++) {
 				fileFormData.append('images', files[i]);
       }
-			axios.put(`http://localhost:3005/product/image/update/${id}`,fileFormData).then(res=>{
+			axios.put(`http://localhost:3005/api/product/image/update/${id}`,fileFormData).then(res=>{
 				console.log(res);
 			})
 		}

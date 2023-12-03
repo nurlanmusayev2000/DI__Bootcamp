@@ -28,7 +28,7 @@ const AddProduct=(props)=>{
 		console.log(values);
 		console.log(document.forms.imageForm.className);
 		const token = localStorage.getItem('token');
-		axios.post('http://localhost:3005/ecommerce/addProduct', {
+		axios.post('http://localhost:3005/api/ecommerce/addProduct', {
 			values,
 			}, {
 			headers: {
@@ -59,7 +59,7 @@ const AddProduct=(props)=>{
 				formData.append('images', files[i]);
       }
       // Use the Fetch API to send the image data to your server
-      axios.post('http://localhost:3005/upload/images',formData).then(response => response.json()).then(data => {
+      axios.post('http://localhost:3005/api/upload/images',formData).then(response => response.json()).then(data => {
           console.log(data);
 
         }).catch(error => {

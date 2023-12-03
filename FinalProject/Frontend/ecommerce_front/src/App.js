@@ -23,7 +23,7 @@ function App() {
       <NavBar/>
       <Routes>
         <Route path="/" element={<MainPageCards/>} />
-        <Route path='/:category' element={<ProductsByCategory/>}/>
+        <Route path='/category' element={<ProductsByCategory/>}/>
         <Route path='/city' element={<ProductForCity/>}/>
         <Route path="/category/product" element={<Product/>}/>
         <Route path="/category/product/search" element={<SearchResults/>}/>

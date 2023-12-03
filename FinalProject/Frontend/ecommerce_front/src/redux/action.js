@@ -100,6 +100,12 @@ const sendId = (data) => {
         payload: data
     }
 }
+const catchError = (data) => {
+    return {
+        type: "CATCH_ERROR",
+        payload: data
+    }
+}
 
 
 ///MIDDLEWARES
@@ -109,10 +115,10 @@ const fetchAllProducts = () => {
     return dispatch => {
         dispatch(startFetch());
 
-        axios.get('http://localhost:3005/').then(res => {
+        axios.get('http://localhost:3005/api').then(res => {
             console.log(res.data);
             dispatch(getallProduct(res.data))
-        }).catch(err => console.log('error happened in fetchall product:', err))
+        }).catch(err => dispatch(catchError(err.message)))
 
     }
 }
@@ -122,9 +128,9 @@ const fetchProductsForCategory = (data) => {
 
 
     return dispatch => {
-        axios.get(`http://localhost:3005/products/category/${data}`).then(res => {
+        axios.get(`http://localhost:3005/api/products/category/${data}`).then(res => {
             dispatch(chooseProductsforCategory(res.data))
-        })
+        }).catch(err => dispatch(catchError(err.message)))
     }
 }
 
@@ -136,11 +142,11 @@ const fetchChosenProduct = (data) => {
 
         console.log('insidefetc', data);
 
-        axios.get(`http://localhost:3005/product/${data}`).then(res => {
+        axios.get(`http://localhost:3005/api/product/${data}`).then(res => {
 
             console.log(res.data);
             dispatch(getChosenProduct(res.data))
-        })
+        }).catch(err => dispatch(catchError(err.message)))
     }
 }
 
@@ -148,9 +154,9 @@ const fetchSearchProduct = (data) => {
 
 
     return dispatch => {
-        axios.get(`http://localhost:3005/searchProduct/${data}`).then(res => {
+        axios.get(`http://localhost:3005/api/searchProduct/${data}`).then(res => {
             dispatch(getSearchProducts(res.data))
-        })
+        }).catch(err => dispatch(catchError(err.message)))
     }
 }
 
@@ -158,7 +164,7 @@ const fetchSearchProduct = (data) => {
 const fetchSignUp = (data) => {
 
     return dispatch => {
-        axios.post('http://localhost:3005/ecommerce/signup', {
+        axios.post('http://localhost:3005/api/ecommerce/signup', {
             data,
             Headers: {
                 'Content-Type': 'application/json'
@@ -167,17 +173,14 @@ const fetchSignUp = (data) => {
             console.log(res);
             localStorage.setItem('token', res.data.token)
             dispatch(signUp(res.data))
-        }).catch(err => {
-            console.log(err);
-            alert(err.response.data.message)
-        })
+        }).catch(err => dispatch(catchError(err.message)))
     }
 }
 
 const fetchLogIn = (data) => {
 
     return (dispatch) => {
-        axios.post('http://localhost:3005/ecommerce/login', {
+        axios.post('http://localhost:3005/api/ecommerce/login', {
 
             data,
             headers: {
@@ -187,18 +190,15 @@ const fetchLogIn = (data) => {
             console.log('loginftchedsuccess data', res);
             localStorage.setItem('token', res.data.token);
             dispatch(logIn(res.data.message, res.data.user, true, res.data.productsOfUser))
-        }).catch(err => {
-            dispatch(logIn('invalid Credential', false))
-        })
+        }).catch(err => dispatch(catchError(err.message)))
     }
 }
 
 const fetchProfile = () => {
     const token = localStorage.getItem('token');
-    console.log('data for params', token);
 
     return dispatch =>
-        axios.get(`http://localhost:3005/ecommerce/profile`, {
+        axios.get(`http://localhost:3005/api/ecommerce/profile`, {
 
             headers: {
                 'Content-Type': 'application/json',
@@ -208,28 +208,31 @@ const fetchProfile = () => {
             console.log('fetchprofile dispatched ', res.data);
             dispatch(accessprofile(res.data.userdetails, res.data.productsOfUser))
         }).catch(err => {
-            console.log("insideerr", err);
+            console.log('inside profile  err', err);
             dispatch(deniedProfile(err))
+            dispatch(catchError(err.message))
         })
 
 }
 
 const postNewProduct = (data) => {
 
-
-    axios.post('http://localhost:3005/ecommerce/addProduct', data).then(res => {
-        console.log('productAddedSuccesfully');
-    })
+    return dispatch => {
+        axios.post('http://localhost:3005/api/ecommerce/addProduct', data).then(res => {
+            console.log('productAddedSuccesfully');
+        }).catch(err => dispatch(catchError(err.message)))
+    }
 }
 
 const deleteProduct = (data) => {
 
     console.log('datafordelete', data);
-    return dispatch => (
-        axios.delete(`http://localhost:3005/product/delete/${data}`).then(res => {
+    return dispatch => {
+        axios.delete(`http://localhost:3005/api/product/delete/${data}`).then(res => {
             dispatch(deleteChosenProduct())
             dispatch(fetchProfile())
-        }).catch(err => console.log(err)))
+        }).catch(err => dispatch(catchError(err.message)))
+    }
 }
 
 export { fetchAllProducts, fetchProductsForCategory, chooseProductForCity, fetchChosenProduct, getPath, fetchSearchProduct, getSearchProducts, fetchSignUp, fetchLogIn, fetchProfile, postNewProduct, deleteProduct, sendId }

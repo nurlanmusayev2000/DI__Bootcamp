@@ -2,31 +2,41 @@ import {connect} from "react-redux"
 import {Link, useParams} from "react-router-dom";
 
 
-const Product=(props)=>{
-	let productData;
+const Product=({product,categoryDetails})=>{
 	const params=useParams();
-	console.log(params);
-	console.log('inchosenproduct',props.product);
-	if (props.product.length===0) {
-		 productData=<h1>hellooooo</h1>
+	console.log('hello');
+	let productData;
+	console.log(product);
+
+
+
+	if (product?.length===0) {
+		 productData=<h1>product not found</h1>
 	}else{
-			let date = props.product.product[0].product_date;
+		const productdetail=product?.product[0];
+		const category=productdetail.categoryname;
+
+// more details about produduct when u click the product card
+			let date = productdetail.product_date;
 			let dateObj = new Date(date);
 			const formattedDate = dateObj.toLocaleString();
 
 		productData=(
 		<>
-		<h1>{props.product.product[0].product_name}</h1>
+		<div className="d-flex justify-content-between">
+			<h1>{productdetail.product_name}</h1>
+			<h3 className="text-end">{category}</h3>
+		</div>
 		<div id="carouselExample" className="carousel slide d-block w-80">
 			<div className="carousel-inner">
 				<div className="carousel-item active">
-					<img src={props.product.product[0].img1} className="d-block w-80" alt="..."/>
+					<img src={productdetail.img1} className="d-block w-80" alt="..."/>
 				</div>
 				<div className="carousel-item">
-					<img src={props.product.product[0].img2} className="d-block w-80" alt="..."/>
+					<img src={productdetail.img2} className="d-block w-80" alt="..."/>
 				</div>
 				<div className="carousel-item">
-					<img src={props.product.product[0].img3} className="d-block w-80" alt="..."/>
+					<img src={productdetail.img3} className="d-block w-80" alt="..."/>
 				</div>
 			</div>
 			<button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -40,13 +50,13 @@ const Product=(props)=>{
 		</div>
 		<div className="subTitle">
 		<ul>
-			<li className="descript"><b>{props.product.product[0].product_description}</b></li>
-			<li><b>City:</b>{props.product.product[0].city}</li>
+			<li className="descript"><b>{productdetail.product_description}</b></li>
+			<li><b>City:</b>{productdetail.city}</li>
 			<li><b>Published Date: </b> {formattedDate}</li>
 		</ul>
-		<h2>{props.product.product[0].price} AZN</h2>
+		<h2>{productdetail.price} AZN</h2>
 		</div>
-		<p>{props.product.product[0].MoreaboutProduct}</p>
+		<p>{productdetail.MoreaboutProduct}</p>
 		<div className="contact">
 			<h1>Contact Details:</h1>
 			<div>
@@ -57,7 +67,6 @@ const Product=(props)=>{
 		</>
 
 		)
-
 	}
 	return(
 		<div className="product">
@@ -67,7 +76,8 @@ const Product=(props)=>{
 }
 const mapStateToProps=(state)=>{
 	return{
-		product:state.chosenProduct
+		product:state.chosenProduct,
+		categoryDetails:state.productByCat
 	}
 }
 export default connect(mapStateToProps)(Product)
