@@ -107,6 +107,12 @@ const catchError = (data) => {
     }
 }
 
+const filteredProducts = (data) => {
+    return {
+        type: "GET_FILTERED_PRODUCTS",
+        payload: data
+    }
+}
 
 ///MIDDLEWARES
 
@@ -116,7 +122,6 @@ const fetchAllProducts = () => {
         dispatch(startFetch());
 
         axios.get('http://localhost:3005/api').then(res => {
-            console.log(res.data);
             dispatch(getallProduct(res.data))
         }).catch(err => dispatch(catchError(err.message)))
 
@@ -137,14 +142,11 @@ const fetchProductsForCategory = (data) => {
 const fetchChosenProduct = (data) => {
 
 
-
     return dispatch => {
 
-        console.log('insidefetc', data);
 
         axios.get(`http://localhost:3005/api/product/${data}`).then(res => {
 
-            console.log(res.data);
             dispatch(getChosenProduct(res.data))
         }).catch(err => dispatch(catchError(err.message)))
     }
@@ -170,7 +172,6 @@ const fetchSignUp = (data) => {
                 'Content-Type': 'application/json'
             }
         }).then(res => {
-            console.log(res);
             localStorage.setItem('token', res.data.token)
             dispatch(signUp(res.data))
         }).catch(err => dispatch(catchError(err.message)))
@@ -187,8 +188,8 @@ const fetchLogIn = (data) => {
                 'Content-Type': 'application/json',
             }
         }).then(res => {
-            console.log('loginftchedsuccess data', res);
             localStorage.setItem('token', res.data.token);
+            localStorage.setItem('refreshtoken', res.data.refreshToken)
             dispatch(logIn(res.data.message, res.data.user, true, res.data.productsOfUser))
         }).catch(err => dispatch(catchError(err.message)))
     }
@@ -196,19 +197,26 @@ const fetchLogIn = (data) => {
 
 const fetchProfile = () => {
     const token = localStorage.getItem('token');
-
+    const refreshToken = localStorage.getItem('refreshtoken')
     return dispatch =>
         axios.get(`http://localhost:3005/api/ecommerce/profile`, {
 
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}`,
+                'refreshToken': refreshToken
             }
         }).then(res => {
-            console.log('fetchprofile dispatched ', res.data);
+            console.log('fethprofilesuccces', res);
+            if (res.data.newtoken !== undefined) {
+                localStorage.setItem('token', res.data.newtoken)
+            }
             dispatch(accessprofile(res.data.userdetails, res.data.productsOfUser))
         }).catch(err => {
-            console.log('inside profile  err', err);
+            console.log('fetchProfile error', err.response.status);
+            if (err.response.status === 403) {
+                localStorage.clear()
+            }
             dispatch(deniedProfile(err))
             dispatch(catchError(err.message))
         })
@@ -218,15 +226,12 @@ const fetchProfile = () => {
 const postNewProduct = (data) => {
 
     return dispatch => {
-        axios.post('http://localhost:3005/api/ecommerce/addProduct', data).then(res => {
-            console.log('productAddedSuccesfully');
-        }).catch(err => dispatch(catchError(err.message)))
+        axios.post('http://localhost:3005/api/ecommerce/addProduct', data).then(res => {}).catch(err => dispatch(catchError(err.message)))
     }
 }
 
 const deleteProduct = (data) => {
 
-    console.log('datafordelete', data);
     return dispatch => {
         axios.delete(`http://localhost:3005/api/product/delete/${data}`).then(res => {
             dispatch(deleteChosenProduct())
@@ -235,4 +240,17 @@ const deleteProduct = (data) => {
     }
 }
 
-export { fetchAllProducts, fetchProductsForCategory, chooseProductForCity, fetchChosenProduct, getPath, fetchSearchProduct, getSearchProducts, fetchSignUp, fetchLogIn, fetchProfile, postNewProduct, deleteProduct, sendId }
+
+const fetchFilteredProduct = (data) => {
+
+
+    return dispatch => {
+        console.log('dataofform', data);
+        axios.post('http://localhost:3005/api/ecommerce/filter', { data }).then(res => {
+            console.log(res);
+            dispatch(filteredProducts(res))
+        })
+    }
+}
+
+export { fetchAllProducts, fetchProductsForCategory, chooseProductForCity, fetchChosenProduct, getPath, fetchSearchProduct, getSearchProducts, fetchSignUp, fetchLogIn, fetchProfile, postNewProduct, deleteProduct, sendId, fetchFilteredProduct }

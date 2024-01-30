@@ -2,7 +2,7 @@ import {CiSearch} from "react-icons/ci"
 import DropDown from "./dropDown"
 import {fetchSearchProduct, getSearchProducts} from "../../redux/action";
 import {connect} from "react-redux";
-import {  useNavigate, useParams } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 
 
@@ -11,8 +11,6 @@ import {  useNavigate, useParams } from "react-router-dom";
 const SearchBox=(props)=>{
 	//const history = useHistory();
 
-	const params=useParams();
-	console.log(params);
 
   const navigate = useNavigate();
 

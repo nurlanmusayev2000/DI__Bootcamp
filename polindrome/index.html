@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="text-input">
+        <button type="submit" id="check-btn">Submit</button>
+
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        console.log('hellooo');
+        const btn = document.getElementById('check-btn');
+        const inpt = document.getElementById('text-input');
+        const result = document.getElementById('result')
+        btn.addEventListener('click', (e) => {
+            e.preventDefault()
+            if (inpt.value === "") {
+                alert('Please input a value');
+
+            }
+            // Use regex with Unicode property escape to match symbols
+            const symbolRegex = /[^\p{L}\p{N}\s]/gu;
+
+            // Replace symbols with an empty string
+            const withoutSymbos = (inpt.value).replace(symbolRegex, '');
+            console.log(withoutSymbos);
+            const valueWithoutSpace = (withoutSymbos.toLowerCase()).replaceAll(' ', '');
+            const inptArray = (valueWithoutSpace).split('');
+            const reverseArray = inptArray.every((item, index) => {
+                console.log(item);
+                console.log(inptArray[inptArray.length - (index + 1)]);
+                return item == inptArray[inptArray.length - (index + 1)]
+            });
+            if (reverseArray) {
+                result.innerHTML = `<span>${inpt.value} is polidrome </span>`
+            } else {
+                result.innerHTML = `<span>${inpt.value} is not polidrome </span>`
+            }
+
+            inpt.value = '';
+        })
+    </script>
+</body>
+
+</html>

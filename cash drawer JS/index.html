@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--You should have an input element with an id of cash
+  +  You should have a div element with an id of change-due
+   + You should have a button element with an id of purchase-btn
+   + When the value in the #cash element is less than price, an alert should appear with the text Customer does not have enough money to purchase the item
+   + When the value in the #cash element is equal to price, the value in the #change-due element should be No change due - customer paid with exact cash
+ 1.  ++++++ When price is 19.5, the value in the #cash element is 20, cid is [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]], and the #purchase-btn element is clicked, the value in the #change-due element should be Status: OPEN QUARTER: $0.5
+ 2. +++++  When price is 3.26, the value in the #cash element is 100, cid is
+    [["PENNY", 1.01],
+    ["NICKEL", 2.05],
+    ["DIME", 3.1],
+    ["QUARTER", 4.25],
+    ["ONE", 90],
+    ["FIVE", 55],
+    ["TEN", 20],
+    ["TWENTY", 60],
+    ["ONE HUNDRED", 100]],
+    and the #purchase-btn element is clicked, the value in the #change-due element should be Status: OPEN TWENTY: $60 TEN: $20 FIVE: $15 ONE: $1 QUARTER: $0.5 DIME: $0.2 PENNY: $0.04
+ 3.++++   When price is 19.5, the value in the #cash element is 20, cid is [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]], and the #purchase-btn element is clicked, the value in the #change-due element should be Status: INSUFFICIENT_FUNDS
+  4.  ++++++ When price is 19.5, the value in the #cash element is 20, cid is [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]], and the #purchase-btn element is clicked, the value in the #change-due element should be Status: INSUFFICIENT_FUNDS
+  5.  When price is 19.5, the value in the #cash element is 20, cid is [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]], and the #purchase-btn element is clicked, the value in the #change-due element should be Status: CLOSED QUARTER: $0 DIME: $0 NICKEL: $0 PENNY: $0.5-->
+
+    <form>
+        <input type="number" id="cash">
+        <button type="submit" id="purchase-btn">Submit</button>
+    </form>
+    <div id="change-due"></div>
+    <script>
+        let arrayForChange = [];
+        let input = document.getElementById('cash');
+        let changeDiv = document.getElementById('change-due');
+        let btn = document.getElementById('purchase-btn');
+        let price = 19.5;
+        let cid = [
+            ["PENNY", 0.5],
+            ["NICKEL", 0],
+            ["DIME", 0],
+            ["QUARTER", 0],
+            ["ONE", 0],
+            ["FIVE", 0],
+            ["TEN", 0],
+            ["TWENTY", 0],
+            ["ONE HUNDRED", 0]
+        ]
+        let totalCid = 0;
+        cid.forEach(item => {
+            totalCid += item[1]
+        });
+        console.log(totalCid);
+
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+            let status;
+            let totalChange = ``;
+            let value = input.value;
+            console.log('log1', price, value);
+
+            if (value < price) {
+                alert('Customer does not have enough money to purchase the item')
+            } else if (value == price) {
+                changeDiv.innerText = 'No change due - customer paid with exact cash'
+            } else {
+                let returnedAmount = value - price;
+                console.log('log2,qaytarilmali mebleg', returnedAmount);
+                let currencyAmounts = [
+                    ["ONE HUNDRED", 100],
+                    ["TWENTY", 20],
+                    ["TEN", 10],
+                    ["FIVE", 5],
+                    ["ONE", 1],
+                    ["QUARTER", 0.25],
+                    ["DIME", 0.1],
+                    ["NICKEL", 0.05],
+                    ["PENNY", 0.01]
+                ]
+                let reversedCid = cid.reverse();
+                let isCidEmpty = reversedCid.every(item => item[1] < returnedAmount);
+                if (isCidEmpty) {
+                    return changeDiv.innerText = 'Status: INSUFFICIENT_FUNDS'
+                }
+                //for (let i = 0; i < reversedCid.length; i++) {
+                //    console.log('extra', currencyAmounts[8][1], returnedAmount, reversedCid.length - 1, i);
+                //    if (reversedCid[i][1] < returnedAmount && i == reversedCid.length - 1 && reversedCid[(reversedCid.length - 1)][1] == 0) {
+
+                //        return changeDiv.innerText = 'Status: INSUFFICIENT_FUNDS'
+                //    } else if (reversedCid[i][1] < returnedAmount && i == reversedCid.length - 1) {
+                //        return changeDiv.innerText = 'Status: INSUFFICIENT_FUNDS'
+
+                //    }
+                //}
+                console.log('log3', 'forich once son log');
+                reversedCid.forEach((element, i) => {
+                    console.log('log 4 foreachin ichi,cidin deyerleri ve amouna gore miqdar', element, currencyAmounts[i]);
+                    if (currencyAmounts[i][1] < returnedAmount) {
+                        let timesBig = Math.floor(returnedAmount / currencyAmounts[i][1]);
+                        console.log('log5 qaytarilacaq mebleg kassada olan puldan nece defe kicikdir', timesBig);
+                        element[1] > returnedAmount ? arrayForChange.push([element[0], currencyAmounts[i][1] * timesBig]) : arrayForChange.push([element[0], element[1]]);
+                        console.log('log6 iternar operatorla eger cidin icindeki mebleq qaytarilannan boyuyduse hamisimi teze erreyin icine at deyilse elementin ozun at', arrayForChange);
+
+
+                        if (element[1] >= returnedAmount) {
+                            status = 'OPEN'
+                            element[1] = element[1] - (currencyAmounts[i][1] * timesBig);
+                            returnedAmount -= currencyAmounts[i][1] * timesBig;
+                            returnedAmount = Number(returnedAmount.toFixed(2))
+                                //     element[1] -= totalreturn;
+                                //                console.log('eger curencyunitdeki deyer qaytarilacaq meblegden boyukdurse hamisini cix', returnedAmount, element[1], reversedCid);
+                                //                 console.log('yoxlama', i, reversedCid.length - 1, element[1]);
+                            if (i == reversedCid.length - 1 && element[1] == 0) {
+                                //                   console.log('insideklose');
+                                status = 'CLOSED'
+
+                            }
+                        } else if (element[1] == 0) {
+                            //                      console.log('insideklose');
+                            status = 'CLOSED'
+                        } else if (element[1] < returnedAmount) {
+                            returnedAmount -= element[1];
+                            returnedAmount = Number(returnedAmount.toFixed(2));
+                            element[1] = 0;
+
+                            //                        console.log('yoxlama', i, reversedCid.length - 1, element[1]);
+                            if (i == reversedCid.length - 1 && element[1] == 0) {
+                                //                               console.log('insideklose');
+                                status = 'CLOSED'
+                            }
+
+                            //                          console.log('boyuk deyilse cixa bildiyin qederin cix', returnedAmount, reversedCid);
+
+                        }
+
+
+                    };
+
+
+                });
+                console.log(returnedAmount != 0);
+                if (returnedAmount != 0) {
+                    console.log('insideif');
+                    return changeDiv.innerText = 'Status: INSUFFICIENT_FUNDS'
+                }
+                for (let i = 0; i < arrayForChange.length; i++) {
+                    totalChange += `${arrayForChange[i][0]}: $${arrayForChange[i][1]} `
+                }
+                changeDiv.innerText = `Status: ${status} ${totalChange}`
+                    //               console.log('yeni array test ucun', arrayForChange, totalChange);
+            }
+        });
+    </script>
+</body>
+
+</html>

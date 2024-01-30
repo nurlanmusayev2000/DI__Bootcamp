@@ -12,20 +12,19 @@ const initialState = {
     usersDetail: [],
     productId: '',
     hasError: false,
-    error: ''
+    error: '',
+    filteredProduct: []
 }
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case "GET_ALL_PRODUCT":
-            console.log(action.payload);
             return {...state, products: action.payload }
         case "GET_PRODUCT_BY_CATEGORY":
             return {...state, productByCat: action.payload }
         case "GET_PRODUCT_BY_CITY":
             return {...state, productByCity: action.payload }
         case "GET_CHOSEN_PRODUCT":
-            console.log('insidereducer', action.payload);
             return {...state, chosenProduct: action.payload }
         case "GET_PATH_AS_PARAMS":
             return {...state, params: action.payload }
@@ -36,14 +35,16 @@ const reducer = (state = initialState, action) => {
         case "USER_LOGGED_IN":
             return {...state, isLoggedIn: action.payload.isloggedIn, logInMessage: action.payload.message, usersData: action.payload.user, ProductOfUser: action.payload.products }
         case "LOGIN_ACTIVE":
-            console.log('reducer when clicked profile get succes', action.payload);
             return {...state, isLoggedIn: true, usersData: action.payload.usersdata, ProductOfUser: action.payload.productOfUser }
         case "LOGIN_NOT_ACTIVE":
             return {...state, logInMessage: action.payload, usersData: [], ProductOfUser: [], isloggedIn: false };
         case "SEND_ID_TO_ANOTHER_COMPONENT":
             return {...state, productId: action.payload }
         case "CATCH_ERROR":
-            return {...state, hasError: true, error: action.payload }
+            return {...state, hasError: true, error: action.payload };
+        case "GET_FILTERED_PRODUCTS":
+            return {...state, filteredProduct: action.payload }
+
         default:
             return state;
     }

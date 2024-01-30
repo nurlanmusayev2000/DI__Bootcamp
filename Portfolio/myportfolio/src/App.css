@@ -1,0 +1,243 @@
+.App {
+    text-align: center;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.icon {
+    font-size: 50px;
+    z-index: 1;
+}
+
+.icon .git-icon {
+    color: black;
+    position: absolute;
+    right: 20%;
+    top: 25%;
+}
+
+.icon .gmail-icon {
+    color: black;
+    position: absolute;
+    left: 15%;
+    top: 55%;
+}
+
+.icon .phone-icon {
+    color: rgb(26, 241, 10);
+    position: absolute;
+    right: 20%;
+    top: 65%;
+}
+
+.icon .linkedIn-icon {
+    color: rgb(12, 39, 189);
+    position: absolute;
+    left: 20%;
+    top: 15%;
+}
+
+.gmail-icon svg {
+    background-color: white;
+    border-radius: 20%;
+}
+
+.linkedIn-icon svg {
+    background-color: white;
+    border-radius: 20%;
+}
+
+.phone-icon svg {
+    background-color: rgb(231, 239, 228);
+    border-radius: 20%;
+}
+
+.git-icon img,
+svg {
+    background-color: #b8213b;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+.myimage {
+    width: 60px;
+    height: 60px;
+}
+
+.myimage img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: rgb(255, 192, 255);
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.name-in-navbar {
+    font-family: 'Lobster', sans-serif;
+    font-family: 'Playfair Display', serif;
+}
+
+.navbar .left-side {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.navbar .right-side a {
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    font-family: 'Anton', sans-serif;
+    font-family: 'Lobster', sans-serif;
+    font-family: 'Playfair Display', serif;
+}
+
+.navbar .right-side {
+    display: flex;
+    align-items: center;
+    gap: 10p;
+}
+
+.intro {
+    background-image: url('./imgs/blake-connally-IKUYGCFmfw4-unsplash.jpg');
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 200px auto;
+    text-align: center;
+    height: 700px;
+    background-color: gray;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.intro .btn {
+    width: 200px;
+    margin: 10px auto;
+}
+
+.intro-info {
+    background-color: rgba(11, 11, 11, 0.536);
+}
+
+.aboutme {
+    padding: 25px;
+    background-color: rgba(128, 128, 128, 0.596);
+    color: white;
+}
+
+.info-section {
+    display: flex;
+}
+
+.infoAboutMe {
+    flex: 3;
+}
+
+.skills-title {
+    flex: 3;
+}
+
+.skills {
+    margin: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skill {
+    padding: 1rem 2rem;
+    margin-bottom: 1.5rem;
+    margin-right: 1.5rem;
+    font-size: 1rem;
+    background: rgba(153, 153, 153, .2);
+    border-radius: 5px;
+    font-weight: 600;
+    color: #666;
+}
+
+.projects {
+    background: rgba(153, 153, 153, 0.589);
+    padding: 15px;
+}
+
+.project-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 5px;
+    box-shadow: 1px 1px 1px 1px white;
+}
+
+.project-img {
+    height: 600px;
+    flex: 1;
+}
+
+.about-project {
+    flex: 1;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.contact {
+    height: 300px;
+    font-size: 3rem;
+    background: rgba(153, 153, 153, 0.377);
+}
+
+.contact-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="search-input">
+        <button type="submit" id="search-button">Search</button>
+    </form>
+    <div class="container">
+        <h1 id="pokemon-name"></h1>
+        <div id="pokemon-id"></div>
+        <div id="img">
+        </div>
+        <div id="weight"></div>
+        <div id="height"></div>
+        <div id="types"></div>
+        <div id="hp"></div>
+        <div id="attack"></div>
+        <div id="defense"></div>
+        <div id="special-attack"></div>
+        <div id="special-defense"></div>
+        <div id="speed"></div>
+    </div>
+
+
+    <script>
+        let container = document.getElementsByClassName('container')
+        let input = document.getElementById('search-input');
+        let btn = document.getElementById('search-button');
+        let name = document.getElementById('pokemon-name');
+        let pokemonId = document.getElementById('pokemon-id');
+        let weight = document.getElementById('weight');
+        let height = document.getElementById('height');
+        let types = document.getElementById('types');
+        let hp = document.getElementById('hp');
+        let attack = document.getElementById('attack');
+        let defense = document.getElementById('defense');
+        let specialAttack = document.getElementById('special-attack');
+        let specialDefense = document.getElementById('special-defense');
+        let speed = document.getElementById('speed');
+        let imgCon = document.getElementById('img');
+
+
+        const imgElement = (id, imgSrc) => {
+            return imgCon.innerHTML = `<img id="${id}" src="${imgSrc}" alt="">`
+        }
+
+
+        btn.addEventListener('click', async(e) => {
+            e.preventDefault();
+            let value = input.value;
+            let valueWithLower = value.toLowerCase();
+            //console.log('value', valueWithLower);
+            fetch(`https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${valueWithLower}`).then(res => {
+                console.log(res.ok);
+                return res.ok ? res.json() : alert('Pokémon not found.')
+
+            }).then(pokemonApi => {
+                console.log(pokemonApi);
+                imgElement('sprite', pokemonApi.sprites.front_default)
+
+                name.innerText = pokemonApi.name;
+                pokemonId.innerText = pokemonApi.id;
+                weight.innerText = pokemonApi.weight;
+                height.innerText = pokemonApi.height;
+                for (let item of pokemonApi.types) {
+                    console.log(item);
+                    types.innerText += (item.type.name).toUpperCase()
+                }
+                hp.innerText = pokemonApi.stats[0].base_stat;
+                attack.innerText = pokemonApi.stats[1].base_stat;
+                defense.innerText = pokemonApi.stats[2].base_stat;
+                specialAttack.innerText = pokemonApi.stats[3].base_stat;
+                specialDefense.innerText = pokemonApi.stats[4].base_stat;
+                speed.innerText = pokemonApi.stats[5].base_stat;
+
+
+            });
+
+
+
+
+        })
+    </script>
+</body>
+
+</html>

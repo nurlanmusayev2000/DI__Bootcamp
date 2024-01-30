@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <form>
+        <input type="text" id="user-input">
+        <button type="submit" id="check-btn">Submit</button>
+        <button id="clear-btn">Clear</button>
+    </form>
+    <div id="result-div"></div>
+    <script>
+        const inpt = document.getElementById('user-input');
+        const checkBtn = document.getElementById('check-btn');
+        const clearBtn = document.getElementById('clear-btn');
+        const resultContent = document.getElementById('result-div')
+        checkBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            resultContent.style.display = 'block';
+
+            console.log('heloo');
+            if (inpt.value == "") {
+                alert('Please provide a phone number')
+            }
+            console.log(inpt.value);
+            const symbolRegex = /[^\p{L}\p{N}\s]/gu;
+
+            //// Replace symbols with an empty string
+            const withoutSymbos = (inpt.value).replace(symbolRegex, '');
+            console.log(withoutSymbos);
+            const valueWithoutSpace = (withoutSymbos.toLowerCase()).replaceAll(' ', '');
+            console.log((valueWithoutSpace.charAt()));
+            const firstDigit = valueWithoutSpace.charAt();
+            const numbersOnlyPattern = /^\d+$/;
+
+            if (numbersOnlyPattern.test(valueWithoutSpace)) {
+                if (valueWithoutSpace.length === 10) {
+                    console.log('it is valid without +1');
+                    resultContent.innerText = `Valid US number: ${inpt.value}`
+                } else if (valueWithoutSpace.length === 11 && valueWithoutSpace.charAt() === '1') {
+                    console.log('valid with +1');
+                    resultContent.innerText = `Valid US number: ${inpt.value}`
+                } else {
+                    console.log('not valid');
+                    resultContent.innerText = `Invalid US number: ${inpt.value}`
+                }
+            } else {
+                console.log('not a number');
+                resultContent.innerText = `Invalid US number: ${inpt.value}`
+            }
+
+        })
+        clearBtn.addEventListener('click', () => {
+            resultContent.innerText = '';
+            resultContent.style.display = 'none';
+
+        })
+    </script>
+</body>
+
+</html>

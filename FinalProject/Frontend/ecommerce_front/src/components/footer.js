@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { FaFacebookF ,FaInstagram,FaMailBulk, FaPhoneAlt} from "react-icons/fa";
 import azerbaijanCities from "../datas/cityData";
-import '../footer.css'
+import '../style/footer.css'
 import {connect} from "react-redux";
 import {chooseProductForCity} from "../redux/action";
 
@@ -9,9 +9,7 @@ import {chooseProductForCity} from "../redux/action";
 const Footer=(props)=>{
 
 	const handleCity=(e)=>{
-		console.log(e.target.innerText);
 		const chosenProducts= props.products.products.filter(product=>product.city===e.target.innerText);
-		console.log(chosenProducts);
 		props.getProductByCity(chosenProducts)
 	}
 

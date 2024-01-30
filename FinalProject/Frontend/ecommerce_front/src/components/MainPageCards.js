@@ -16,7 +16,6 @@ const MainPageCards=({ fetchAllProduct ,fetchChosenProduct,products})=>{
 		fetchChosenProduct(productId);
 
 }
-console.log(products);
 
 //create cards for products
 const prodCard = products.products?.map((products) => {

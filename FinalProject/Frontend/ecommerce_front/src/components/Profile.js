@@ -1,14 +1,13 @@
 import {connect} from "react-redux"
 import card from "./subComponents/productCard";
 import {deleteProduct, fetchChosenProduct, fetchProfile, sendId} from "../redux/action";
-import '../profile.css'
+import '../style/profile.css'
 import {Link} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 
 const Profile=(props)=>{
 	const navigate=useNavigate()
-	console.log(typeof(props.user[0]));
 
 // logout button when clciked delete token
 	const logoutHandler=()=>{
@@ -30,7 +29,6 @@ const deleteHandler=(e)=>{
 
 //update user's product
 const updateHandler=(e)=>{
-	console.log(e.target.parentElement.dataset.buttonid);
 	const id=e.target.parentElement.dataset.buttonid;
 	props.sendId(id)
 	navigate('/Ecommerce/product/update')

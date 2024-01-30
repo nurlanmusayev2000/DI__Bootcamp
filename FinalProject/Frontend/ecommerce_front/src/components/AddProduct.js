@@ -1,5 +1,5 @@
 import {connect} from "react-redux"
-import '../addProduct.css'
+import '../style/addProduct.css'
 import azerbaijanCities from "../datas/cityData";
 import axios from "axios";
 import {postNewProduct} from "../redux/action";
@@ -25,8 +25,6 @@ const AddProduct=(props)=>{
 		const form=document.forms.productForm
 		const formdata= new FormData(form);
 		const values=Object.fromEntries(formdata);
-		console.log(values);
-		console.log(document.forms.imageForm.className);
 		const token = localStorage.getItem('token');
 		axios.post('http://localhost:3005/api/ecommerce/addProduct', {
 			values,
@@ -38,11 +36,9 @@ const AddProduct=(props)=>{
 			})
 				.then(response => {
 					// Handle the response
-					console.log(response.data);
 				})
 					.catch(error => {
 						// Handle errors
-						console.error('Error:', error);
 					});
 		document.forms.imageForm.className='d-block'
 	}
@@ -51,7 +47,6 @@ const AddProduct=(props)=>{
 	function uploadImages() {
     const input = document.getElementById('imageInput');
     const files = input.files;
-		console.log(files[0]);
     if (files.length >= 3) {
 			let formData = new FormData();
       // Append each selected file to the FormData object
@@ -60,7 +55,6 @@ const AddProduct=(props)=>{
       }
       // Use the Fetch API to send the image data to your server
       axios.post('http://localhost:3005/api/upload/images',formData).then(response => response.json()).then(data => {
-          console.log(data);
 
         }).catch(error => {
 						console.error('Error:', error);
@@ -91,7 +85,7 @@ const AddProduct=(props)=>{
 					</select><br />
 					<label  htmlFor="product_name">Name:</label>
 					<input type="text" id="product_name" name="product_name" required /><br />
-					<label htmlFor="product_description">product description</label><br />
+					<label htmlFor="product_description">Product description:</label>
 					<textarea name="product_description" id="product_description" cols="30" rows="2" required></textarea><br />
 					<label htmlFor="price" >Price(you can enter product price with only AZN currency temporarly)</label>
 					<input type="text" id="price" name="price" required />

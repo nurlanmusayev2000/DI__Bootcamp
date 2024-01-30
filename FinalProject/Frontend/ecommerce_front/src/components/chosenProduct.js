@@ -1,12 +1,9 @@
 import {connect} from "react-redux"
-import {Link, useParams} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 
 const Product=({product,categoryDetails})=>{
-	const params=useParams();
-	console.log('hello');
 	let productData;
-	console.log(product);
 
 
 
@@ -15,6 +12,10 @@ const Product=({product,categoryDetails})=>{
 	}else{
 		const productdetail=product?.product[0];
 		const category=productdetail.categoryname;
+		const callHandler=()=>{
+			const number=document.querySelector('.number');
+			number.className='d-inline'
+		}
 
 // more details about produduct when u click the product card
 			let date = productdetail.product_date;
@@ -30,13 +31,13 @@ const Product=({product,categoryDetails})=>{
 		<div id="carouselExample" className="carousel slide d-block w-80">
 			<div className="carousel-inner">
 				<div className="carousel-item active">
-					<img src={productdetail.img1} className="d-block w-80" alt="..."/>
+					<img src={productdetail.img1} className="d-block w-80 img-fluid" alt="..."/>
 				</div>
 				<div className="carousel-item">
-					<img src={productdetail.img2} className="d-block w-80" alt="..."/>
+					<img src={productdetail.img2} className="d-block w-80 img-fluid" alt="..."/>
 				</div>
 				<div className="carousel-item">
-					<img src={productdetail.img3} className="d-block w-80" alt="..."/>
+					<img src={productdetail.img3} className="d-block w-80 img-fluid" alt="..."/>
 				</div>
 			</div>
 			<button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -54,14 +55,17 @@ const Product=({product,categoryDetails})=>{
 			<li><b>City:</b>{productdetail.city}</li>
 			<li><b>Published Date: </b> {formattedDate}</li>
 		</ul>
-		<h2>{productdetail.price} AZN</h2>
+		<div>
+			<h2>{productdetail.price} AZN</h2>
+			<h3>Seller:{(productdetail.name).toUpperCase()} {(productdetail.surname).toUpperCase()}</h3>
+		</div>
 		</div>
 		<p>{productdetail.MoreaboutProduct}</p>
 		<div className="contact">
 			<h1>Contact Details:</h1>
 			<div>
-				<h4><Link>Send Message</Link></h4>
-				<h4><Link>Call</Link></h4>
+				<h4><Link to='/send/mail'>Send Message</Link></h4>
+				<h4><button onClick={callHandler} className="btn btn-primary">Call</button> <span className="number d-none" >{productdetail.phonenumber}</span></h4>
 			</div>
 		</div>
 		</>

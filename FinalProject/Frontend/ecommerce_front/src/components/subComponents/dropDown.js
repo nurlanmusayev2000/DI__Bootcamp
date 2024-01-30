@@ -9,9 +9,7 @@ import {chooseProductForCity} from "../../redux/action";
 const DropDown =(props)=> {
 
 	const handleCity=(e)=>{
-		console.log(e.target.innerText);
 		const chosenProducts= props.products.products.filter(product=>product.city===e.target.innerText);
-		console.log(chosenProducts);
 		props.getProductByCity(chosenProducts)
 	}
 

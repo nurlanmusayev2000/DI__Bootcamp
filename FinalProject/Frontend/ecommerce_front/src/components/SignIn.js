@@ -1,20 +1,17 @@
 import {connect} from 'react-redux';
-import '../SignIn.css'
+import '../style/SignIn.css'
 import {fetchSignUp} from '../redux/action';
 import {  Link, useNavigate } from "react-router-dom";
 
 
 const SignUp=(props)=>{
 	const navigate=useNavigate()
-	console.log(props);
 	const formDataHandler=(e)=>{
 		e.preventDefault()
 		const form=document.forms.signUpForm;
 		const formData=new FormData(form)
 		const objectOfFormValue=Object.fromEntries(formData)
-		console.log(objectOfFormValue);
 		props.fetchSignUp(objectOfFormValue);
-		console.log(props);
 
 		for(let data of form){
 			data.value=""

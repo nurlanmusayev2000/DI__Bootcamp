@@ -3,11 +3,13 @@ import {Link} from "react-router-dom";
 const card=(key,path,products,clickHandler,loginCheck,updateHandler,deleteHandler)=>{
 	let date = products.product_date;
   let dateObj = new Date(date);
-  const formattedDate = dateObj.toLocaleString();
+  let year=dateObj.getFullYear();
+  let month=dateObj.getMonth();
+  let day= dateObj.getDate();
+  const formattedDate = year +'-' + month + '-' + day;
   //if user is logged in he can delete or update his own product
   let crud;
   if (loginCheck) {
-    console.log('logincheck');
     crud=  <div data-buttonid={products.product_id} className="crud-buttons ">
               <button  onClick={updateHandler} className="btn btn-warning btn-sm">Update</button>
               <button onClick={deleteHandler} className="btn btn-danger btn-sm mx-2">Delete</button>
@@ -19,7 +21,7 @@ const card=(key,path,products,clickHandler,loginCheck,updateHandler,deleteHandle
     {crud}
     <Link to={path} data-id={products.product_id} onClick={clickHandler} className="card" key={products.id} >
         <div className="img-card">
-          <img src={products.img1} alt="" />
+          <img src={products.img1} className="img-thumbnail" alt="" />
         </div>
         <div className="card-body">
           <h3 className="card-title">{products.price} Azn</h3>

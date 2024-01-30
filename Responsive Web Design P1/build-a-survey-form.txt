@@ -1,0 +1,108 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="title">Job Search Help</h1>
+        <p id="description">Find a job with us without payment</p>
+        <form id="survey-form">
+            <label for="name" id="name-label">Name</label><br>
+            <input type="text" id="name" placeholder="Enter a name" required><br>
+            <label for="email" id="email-label">Email</label><br>
+            <input type="email" id="email" placeholder="Enter a email" required><br>
+            <label for="number" id="number-label">Age</label><br>
+            <input type="number" min="1" max="100" id="number" placeholder="add a number"><br>
+            <label for="dropdown">Which option best describe your situation</label><br>
+            <select id="dropdown">
+							<option value="Tired">Tired</option>
+							<option value="Retired">Retired</option>
+							<option value="Worker">Worker</option>
+				</select><br>
+            <label> Would you want to find a job <br>
+							<input type="radio" id="Definitely" name="fav_language" value="Definitely">
+							<label for="Definitely">Definitely</label><br>
+            <input type="radio" id="no" name="fav_language" value="no">
+            <label for="no">No Thanks</label><br>
+            </label><br>
+            <label> What is Your skills</label><br>
+            <label for="html"><input type="checkbox" value="html">html</label><br>
+            <label for="Css"><input type="checkbox" value="css">css</label><br>
+            <label for="Scss"><input type="checkbox" value="scss">Scss</label><br>
+            <label for="project"> Add your project</label><br>
+            <textarea name="project" id="project" cols="60" rows="10"></textarea><br>
+            <button type="submit" id="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
+
+** end of undefined **
+
+** start of undefined **
+
+body {
+    background-image: url("1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    font-size: 1.1rem;
+    color: black;
+    width: 30%;
+    background-color: rgba(137, 43, 226, 0.63);
+    padding: 10px;
+    text-align: center;
+}
+
+p {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+#survey-form {
+    background-color: rgba(34, 6, 59, 0.678);
+    text-align: start;
+    padding: 15px;
+    margin: 15px;
+    line-height: 25px;
+    color: wheat;
+}
+
+#survey-form>input {
+    width: 90%;
+    height: 26px;
+}
+
+#submit {
+    width: 90%;
+    height: 40px;
+    font-size: 1.5rem;
+    background: none;
+    color: white;
+    font-weight: bold;
+}
+textarea {
+    width: 90%;
+}
+
+** end of undefined **
+

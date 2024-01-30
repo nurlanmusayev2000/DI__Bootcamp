@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="title">Job Search Help</h1>
+        <p id="description">Find a job with us without payment</p>
+        <form id="survey-form">
+            <label for="name">Name</label><br>
+            <input type="text" id="name" placeholder="Enter a name" required><br>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" placeholder="Enter a email" required><br>
+            <label for="number">Age</label><br>
+            <input type="number" min="1" max="100" id="number" placeholder="add a number"><br>
+            <label for="dropdown">Which option best describe your situation</label><br>
+            <select id="dropdown">
+							<option value="Tired">Tired</option>
+							<option value="Retired">Retired</option>
+							<option value="Worker">Worker</option>
+				</select><br>
+            <label> Would you want to find a job <br>
+							<input type="radio" id="Definitely" name="fav_language" value="Definitely">
+							<label for="Definitely">Definitely</label><br>
+            <input type="radio" id="no" name="fav_language" value="no">
+            <label for="no">No Thanks</label><br>
+            </label><br>
+            <label> What is Your skills</label><br>
+            <label for="html"><input type="checkbox">html</label><br>
+            <label for="Css"><input type="checkbox">css</label><br>
+            <label for="Scss"><input type="checkbox">Scss</label><br>
+            <label for="project"> Add your project</label><br>
+            <textarea name="project" id="project" cols="10" rows="10"></textarea><br>
+            <button type="submit" id="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

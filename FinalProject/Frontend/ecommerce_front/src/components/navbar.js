@@ -49,7 +49,6 @@ const NavBar=({param,isLoggedIn,fetchLogIn,fetchProfile,products,fetchProductsFo
 
 //it is for category button when clicked categoryin dropdown in nacbar it will get product for specific category
 	const handleCategory=(e)=>{
-		console.log(e.target.dataset.id);
 		const categoryId=e.target.dataset.id;
 		fetchProductsForCategory(categoryId);
 	}
@@ -62,9 +61,11 @@ const NavBar=({param,isLoggedIn,fetchLogIn,fetchProfile,products,fetchProductsFo
 	return(
 		<div className="navBar">
 			<div className="nav_container">
-
-				<NavLink className='main_page_link' to='/'>E-COMMERCE</NavLink>
-				<div className="nav_category">
+				<div className="nav-start">
+					<div className="nav-logo">
+						<NavLink className='main_page_link' to='/'>E-COMMERCE</NavLink>
+					</div>
+					<div className="nav_category">
 					<div className="dropdown">
 						<button className="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 							<BiSolidCategory/>
@@ -75,12 +76,17 @@ const NavBar=({param,isLoggedIn,fetchLogIn,fetchProfile,products,fetchProductsFo
 						</ul>
 					</div>
 				</div>
-				<SearchBox/>
-				<button onClick={addNewProduct} className="nav_button btn btn-success btn-sm">New Announcement </button>
-				<div className="d-flex sign-buttons">
-				<Link to='/Ecommerce/logIn' className="login-button nav_button btn btn-danger btn-sm">Login </Link>
-				<Link to='/Ecommerce/signIn'  className="signup-button nav_button btn btn-danger btn-sm">Sign up </Link>
-				<Link to='/Ecommerce/profile' onClick={acceshandle}><CgProfile className="profiIcon"/></Link>
+				</div>
+
+				<div className="search-form">
+					<SearchBox/>
+				</div>
+				<div className=" sign-buttons">
+				<Link to='/Ecommerce/filter'  className="mx-2 nav_button btn  link ">Filter</Link>
+				<button onClick={addNewProduct} className="new_announcement nav_button btn btn-success btn-sm link mx-2">New Announcement </button>
+				<Link to='/Ecommerce/logIn' className="mx-2 login-button nav_button btn btn-danger btn-sm link">Login </Link>
+				<Link to='/Ecommerce/signIn'  className=" mx-2 signup-button nav_button btn btn-danger btn-sm link">Sign up </Link>
+				<Link to='/Ecommerce/profile' onClick={acceshandle}><CgProfile className="profiIcon "/></Link>
 				</div>
 			</div>
 		</div>

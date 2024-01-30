@@ -1,5 +1,5 @@
 import {connect} from "react-redux"
-import '../updateProduct.css'
+import '../style/updateProduct.css'
 import azerbaijanCities from "../datas/cityData";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
@@ -29,7 +29,6 @@ const UpdateProduct=({id,usersProducts,category})=>{
 		const formdata=new FormData(form);
 		const formValues=Object.fromEntries(formdata);
 		axios.put(`http://localhost:3005/api/product/update/${id}`,formValues).then(res=>{
-			console.log(res);
 		})
 // type = file input values
 		const fileInput = document.getElementById('imageInput');
@@ -41,7 +40,6 @@ const UpdateProduct=({id,usersProducts,category})=>{
 				fileFormData.append('images', files[i]);
       }
 			axios.put(`http://localhost:3005/api/product/image/update/${id}`,fileFormData).then(res=>{
-				console.log(res);
 			})
 		}
 
